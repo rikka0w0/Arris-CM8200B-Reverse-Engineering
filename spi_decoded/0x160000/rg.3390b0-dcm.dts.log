@@ -1,0 +1,83 @@
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /reserved-memory/reserved-RG-memc0: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb/cpupll@0: node has a unit name, but no reg property
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb/memory_controllers/memc@0: node has a unit name, but no reg property
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb/brcmstb-clks: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb/brcmstb-clks/sys0_pll_ndiv_int: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb/brcmstb-clks/sys1_pll_ndiv_int: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb/brcmstb-clks/cpu_ndiv_int: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb/brcmstb-clks/lc_ndiv_int: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /rdb/brcmstb-clks/moca_ndiv_int: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /ba: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /mbox: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /mdio@d4e403c0/phy8: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_vs_reg): /ubus-capture: node has a reg or ranges property, but no unit name
+rg.3390b0-dcm.dts: Warning (unit_address_format): /reserved-memory/reserved-nodma@00000000: unit name should not have leading 0s
+rg.3390b0-dcm.dts: Warning (unit_address_format): /fpm@0xd3a00000: unit name should not have leading "0x"
+rg.3390b0-dcm.dts: Warning (unit_address_format): /runner@0xd5000000: unit name should not have leading "0x"
+rg.3390b0-dcm.dts: Warning (unit_address_format): /pmb@0xd3c03100: unit name should not have leading "0x"
+rg.3390b0-dcm.dts: Warning (unit_address_format): /pmb@0xd3c03100/bpcm@0x7: unit name should not have leading "0x"
+rg.3390b0-dcm.dts: Warning (unit_address_format): /pmb@0xd3c03100/bpcm@0x8: unit name should not have leading "0x"
+rg.3390b0-dcm.dts: Warning (unit_address_format): /pmb@0xd3c03100/bpcm@0xb: unit name should not have leading "0x"
+rg.3390b0-dcm.dts: Warning (unit_address_format): /pmb@0xf10b0f00: unit name should not have leading "0x"
+rg.3390b0-dcm.dts: Warning (unit_address_format): /pmb@0xf10b0f00/bpcm@0x0: unit name should not have leading "0x"
+rg.3390b0-dcm.dts: Warning (simple_bus_reg): /rdb/sdhci@f04a0100: simple-bus unit address format error, expected "f04a0000"
+rg.3390b0-dcm.dts: Warning (simple_bus_reg): /rdb/sdhci@f04a0300: simple-bus unit address format error, expected "f04a0200"
+rg.3390b0-dcm.dts: Warning (simple_bus_reg): /rdb/cpupll@0: missing or empty reg/ranges property
+rg.3390b0-dcm.dts: Warning (simple_bus_reg): /rdb/cpu-clk-div@0: simple-bus unit address format error, expected "f04a257c"
+rg.3390b0-dcm.dts: Warning (simple_bus_reg): /rdb/brcmstb-clks: simple-bus unit address format error, expected "f0480000"
+rg.3390b0-dcm.dts: Warning (i2c_bus_reg): /i2c@d3c00700/wbid@0: I2C bus unit address format error, expected "24"
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/usb-phy@f1000200: duplicate unit-address (also used in node /rdb/usb@f1000200)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/usb-phy@f1010200: duplicate unit-address (also used in node /rdb/usb@f1010200)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/cpupll@0: duplicate unit-address (also used in node /rdb/cpu-clk-div@0)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/lc_pwrdn_req@f0480268: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_pwrdn_req@f0480268)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/hif_sdio_card@f0480298: duplicate unit-address (also used in node /rdb/brcmstb-clks/hif_sdio_emmc@f0480298)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/sys0_pll_mdiv_ch0@f0480004: duplicate unit-address (also used in node /rdb/brcmstb-clks/sys0_pll_dis_ch0@f0480004)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/sys0_pll_mdiv_ch0@f0480004: duplicate unit-address (also used in node /rdb/brcmstb-clks/sys0_pll_pdh_ch0@f0480004)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/sys0_pll_dis_ch0@f0480004: duplicate unit-address (also used in node /rdb/brcmstb-clks/sys0_pll_pdh_ch0@f0480004)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/hif_sdio_card@f0480298: duplicate unit-address (also used in node /rdb/brcmstb-clks/hif_spi@f0480298)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/hif_sdio_emmc@f0480298: duplicate unit-address (also used in node /rdb/brcmstb-clks/hif_spi@f0480298)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/mocamac_54@f0480368: duplicate unit-address (also used in node /rdb/brcmstb-clks/mocamac_gisb@f0480368)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/mocamac_54@f0480368: duplicate unit-address (also used in node /rdb/brcmstb-clks/mocamac_scb@f0480368)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/mocamac_gisb@f0480368: duplicate unit-address (also used in node /rdb/brcmstb-clks/mocamac_scb@f0480368)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/sys1_pll_mdiv_ch4@f0480064: duplicate unit-address (also used in node /rdb/brcmstb-clks/sys1_pll_dis_ch4@f0480064)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/sys1_pll_mdiv_ch4@f0480064: duplicate unit-address (also used in node /rdb/brcmstb-clks/sys1_pll_pdh_ch4@f0480064)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/sys1_pll_dis_ch4@f0480064: duplicate unit-address (also used in node /rdb/brcmstb-clks/sys1_pll_pdh_ch4@f0480064)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_alwayson@f048039c: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_duallane_300@f048039c)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_alwayson@f048039c: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_rcbypref_100@f048039c)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_duallane_300@f048039c: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_rcbypref_100@f048039c)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_108@f04803a4: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_54@f04803a4)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_108@f04803a4: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_gisb@f04803a4)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_54@f04803a4: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_gisb@f04803a4)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_108@f04803a4: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_scb@f04803a4)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_54@f04803a4: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_scb@f04803a4)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/pcie_gisb@f04803a4: duplicate unit-address (also used in node /rdb/brcmstb-clks/pcie_scb@f04803a4)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/usb0_27_mdio@f0480448: duplicate unit-address (also used in node /rdb/brcmstb-clks/usb0_freerun@f0480448)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/usb0_54@f0480450: duplicate unit-address (also used in node /rdb/brcmstb-clks/usb0_gisb@f0480450)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/usb0_54@f0480450: duplicate unit-address (also used in node /rdb/brcmstb-clks/usb0_scb@f0480450)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/usb0_gisb@f0480450: duplicate unit-address (also used in node /rdb/brcmstb-clks/usb0_scb@f0480450)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/lc_mdiv_ch1@f0480124: duplicate unit-address (also used in node /rdb/brcmstb-clks/lc_dis_ch1@f0480124)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/lc_mdiv_ch1@f0480124: duplicate unit-address (also used in node /rdb/brcmstb-clks/lc_pdh_ch1@f0480124)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/lc_dis_ch1@f0480124: duplicate unit-address (also used in node /rdb/brcmstb-clks/lc_pdh_ch1@f0480124)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/lc_mdiv_ch2@f0480128: duplicate unit-address (also used in node /rdb/brcmstb-clks/lc_dis_ch2@f0480128)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/lc_mdiv_ch2@f0480128: duplicate unit-address (also used in node /rdb/brcmstb-clks/lc_pdh_ch2@f0480128)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/lc_dis_ch2@f0480128: duplicate unit-address (also used in node /rdb/brcmstb-clks/lc_pdh_ch2@f0480128)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_mdiv_ch0@f048016c: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_dis_ch0@f048016c)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_mdiv_ch0@f048016c: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_pdh_ch0@f048016c)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_dis_ch0@f048016c: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_pdh_ch0@f048016c)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_mdiv_ch1@f0480170: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_dis_ch1@f0480170)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_mdiv_ch1@f0480170: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_pdh_ch1@f0480170)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_dis_ch1@f0480170: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_pdh_ch1@f0480170)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_mdiv_ch2@f0480174: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_dis_ch2@f0480174)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_mdiv_ch2@f0480174: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_pdh_ch2@f0480174)
+rg.3390b0-dcm.dts: Warning (unique_unit_address): /rdb/brcmstb-clks/moca_dis_ch2@f0480174: duplicate unit-address (also used in node /rdb/brcmstb-clks/moca_pdh_ch2@f0480174)
+rg.3390b0-dcm.dts: Warning (phys_property): /rdb/xhci_v2@f1001000: Missing property '#phy-cells' in node /interrupt-controller@ffd00000 or bad phandle (referred from phys[1])
+rg.3390b0-dcm.dts: Warning (phys_property): /rdb/xhci_v2@f1011000: Missing property '#phy-cells' in node /interrupt-controller@ffd00000 or bad phandle (referred from phys[1])
+rg.3390b0-dcm.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+rg.3390b0-dcm.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+rg.3390b0-dcm.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+rg.3390b0-dcm.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+rg.3390b0-dcm.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+rg.3390b0-dcm.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+rg.3390b0-dcm.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+rg.3390b0-dcm.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'

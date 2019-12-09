@@ -1,0 +1,29 @@
+0x736F4.dts: Warning (unit_address_vs_reg): /rdb: node has a reg or ranges property, but no unit name
+0x736F4.dts: Warning (unit_address_vs_reg): /rdb/cpupll@0: node has a unit name, but no reg property
+0x736F4.dts: Warning (unit_address_vs_reg): /rdb/memory_controllers/memc@0: node has a unit name, but no reg property
+0x736F4.dts: Warning (unit_address_format): /reserved-memory/reserved-nodma@00000000: unit name should not have leading 0s
+0x736F4.dts: Warning (simple_bus_reg): /rdb/sdhci@f04a0100: simple-bus unit address format error, expected "f04a0000"
+0x736F4.dts: Warning (simple_bus_reg): /rdb/sdhci@f04a0300: simple-bus unit address format error, expected "f04a0200"
+0x736F4.dts: Warning (simple_bus_reg): /rdb/cpupll@0: missing or empty reg/ranges property
+0x736F4.dts: Warning (simple_bus_reg): /rdb/cpu-clk-div@0: simple-bus unit address format error, expected "f04a257c"
+0x736F4.dts: Warning (simple_bus_reg): /rdb/vreg-wifi-1-rf-pwr: missing or empty reg/ranges property
+0x736F4.dts: Warning (simple_bus_reg): /rdb/vreg-wifi-2-rf-pwr: missing or empty reg/ranges property
+0x736F4.dts: Warning (simple_bus_reg): /rdb/vreg-wifi-0-rf-pwr: missing or empty reg/ranges property
+0x736F4.dts: Warning (simple_bus_reg): /rdb/vreg-wifi-rf-pwr: missing or empty reg/ranges property
+0x736F4.dts: Warning (simple_bus_reg): /rdb/vreg-wifi-2-pwr: missing or empty reg/ranges property
+0x736F4.dts: Warning (simple_bus_reg): /rdb/vreg-wifi-0-pwr: missing or empty reg/ranges property
+0x736F4.dts: Warning (simple_bus_reg): /rdb/vreg-wifi-1-pwr: missing or empty reg/ranges property
+0x736F4.dts: Warning (simple_bus_reg): /rdb/vreg-wifi-pwr: missing or empty reg/ranges property
+0x736F4.dts: Warning (unique_unit_address): /rdb/usb-phy@f1000200: duplicate unit-address (also used in node /rdb/usb@f1000200)
+0x736F4.dts: Warning (unique_unit_address): /rdb/usb-phy@f1010200: duplicate unit-address (also used in node /rdb/usb@f1010200)
+0x736F4.dts: Warning (unique_unit_address): /rdb/cpupll@0: duplicate unit-address (also used in node /rdb/cpu-clk-div@0)
+0x736F4.dts: Warning (phys_property): /rdb/xhci_v2@f1001000: Missing property '#phy-cells' in node /interrupt-controller@ffd00000 or bad phandle (referred from phys[1])
+0x736F4.dts: Warning (phys_property): /rdb/xhci_v2@f1011000: Missing property '#phy-cells' in node /interrupt-controller@ffd00000 or bad phandle (referred from phys[1])
+0x736F4.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+0x736F4.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+0x736F4.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+0x736F4.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+0x736F4.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+0x736F4.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+0x736F4.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
+0x736F4.dts: Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
