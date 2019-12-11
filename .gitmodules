@@ -1,6 +1,3 @@
 [submodule "tools/python-lzw"]
 	path = tools/python-lzw
 	url = https://github.com/joeatwork/python-lzw.git
-[submodule "tools/dtc"]
-	path = tools/dtc
-	url = https://git.kernel.org/pub/scm/utils/dtc/dtc.git
