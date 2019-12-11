@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<CpeConfig version="3.0">
+  <Device>
+    <DeviceInfo>
+      <FirstUseDate>2019-11-04T12:50:27+10:00</FirstUseDate>
+      <VendorConfigFileNumberOfEntries>0</VendorConfigFileNumberOfEntries>
+      <SupportedDataModel instance="1">
+        <Alias>cpe-data-model-1</Alias>
+      </SupportedDataModel>
+      <SupportedDataModel nextInstance="2" ></SupportedDataModel>
+    </DeviceInfo>
+    <X_BROADCOM_COM_eRouter>
+      <esafeInitModeControl>1</esafeInitModeControl>
+      <esafeAdminMode>1</esafeAdminMode>
+      <PrimaryNetworkBridged>FALSE</PrimaryNetworkBridged>
+      <PseudoBridgeMode>FALSE</PseudoBridgeMode>
+      <DisableLocalSwitching>1</DisableLocalSwitching>
+      <FactoryMib>
+        <WanIpMacAddress>(null)</WanIpMacAddress>
+        <LanIpMacAddress>(null)</LanIpMacAddress>
+      </FactoryMib>
+    </X_BROADCOM_COM_eRouter>
+    <Time>
+      <Enable>FALSE</Enable>
+      <LocalTimeZone>+10:00</LocalTimeZone>
+      <X_BROADCOM_COM_

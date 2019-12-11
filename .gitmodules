@@ -3,4 +3,4 @@
 	url = https://github.com/joeatwork/python-lzw.git
 [submodule "tools/dtc"]
 	path = tools/dtc
-	url = git://git.kernel.org/pub/scm/utils/dtc/dtc.git
+	url = https://git.kernel.org/pub/scm/utils/dtc/dtc.git
