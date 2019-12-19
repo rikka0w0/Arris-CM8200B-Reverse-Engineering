@@ -4,3 +4,12 @@
 [submodule "tools/dtc"]
 	path = tools/dtc
 	url = https://git.kernel.org/pub/scm/utils/dtc/dtc.git
+[submodule "docs/stblinux-3.14"]
+	path = docs/stblinux-3.14
+	url = https://github.com/Broadcom/stblinux-3.14.git
+[submodule "docs/dpdk"]
+	path = docs/dpdk
+	url = https://github.com/Broadcom/dpdk.git
+[submodule "docs/u-boot"]
+	path = docs/u-boot
+	url = https://github.com/ARM-software/u-boot.git
