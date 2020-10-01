@@ -1,0 +1,569 @@
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 3.14.28-rgProd_6.1.0 (mgi2739@ca25ecal01) (gcc version 4.8.5 (Broadcom stbgcc-4.8-1.5) ) #5 SMP Fri Nov 4 09:46:15 PDT 2016
+[    0.000000] CPU: ARMv7 Processor [420f00f3] revision 3 (ARMv7), cr=30c7387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] Machine model: BCM93390DCM
+[    0.000000] moving dtb from 0x000000000763b000 to 0x000000000076c984
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] MCP: Disabling write pairing
+[    0.000000] PERCPU: Embedded 8 pages/cpu @cfddc000 s8768 r8192 d15808 u32768
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 65024
+[    0.000000] Kernel command line: ubi.mtd=flash1.rg1 rootfstype=ubifs root=ubi0:rootfs platformboot ubifs_apps jffs2_data coherent_pool=1M noconsole
+[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Memory: 92396K/262144K available (5265K kernel code, 257K rwdata, 1580K rodata, 256K init, 200K bss, 169748K reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xd0800000 - 0xff000000   ( 744 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xd0000000   ( 256 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc06b7810   (6847 kB)
+[    0.000000]       .init : 0xc06b8000 - 0xc06f8240   ( 257 kB)
+[    0.000000]       .data : 0xc06fa000 - 0xc073a5d8   ( 258 kB)
+[    0.000000]        .bss : 0xc073a5e0 - 0xc076c984   ( 201 kB)
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000]  RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=2.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] irq_brcmstb_l2: registered L2 intc (mem: 0xfc403000, parent irq: 95)
+[    0.000000] irq_brcmstb_l2: registered L2 intc (mem: 0xfc4a1000, parent irq: 63)
+[    0.000000] irq_brcmstb_l2: registered L2 intc (mem: 0xfc410640, parent irq: 97)
+[    0.000000] irq_brcmstb_l2: registered L2 intc (mem: 0xfc431200, parent irq: 50)
+[    0.000000] irq_bcm7120_l2: registered BCM7120 L2 intc (mem: 0xfc40a600, parent IRQ(s): 2)
+[    0.000000] irq_bcm7120_l2: registered BCM7120 L2 intc (mem: 0xfc417200, parent IRQ(s): 3)
+[    0.000000] Architected cp15 timer(s) running at 27.00MHz (virt).
+[    0.000004] sched_clock: 56 bits at 27MHz, resolution 37ns, wraps every 2545165795328ns
+[    0.000009] Switching to timer-based delay loop
+[    0.000183] Calibrating delay loop (skipped), value calculated using timer frequency.. 54.00 BogoMIPS (lpj=270000)
+[    0.000192] pid_max: default: 32768 minimum: 301
+[    0.000282] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000289] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.003539] CPU: Testing write buffer coherency: ok
+[    0.003695] CPU0: update cpu_power 1024
+[    0.003702] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.003740] Setting up static identity map for 0x503948 - 0x5039a0
+[    0.005910] CPU1: Booted secondary processor
+[    0.005928] CPU1: update cpu_power 1024
+[    0.005931] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.006033] Brought up 2 CPUs
+[    0.006043] SMP: Total of 2 processors activated.
+[    0.006048] CPU: All CPU(s) started in SVC mode.
+[    0.006398] devtmpfs: initialized
+[    0.010110] VFP support v0.3: implementor 42 architecture 4 part 00 variant 0 rev 0
+[    0.010420] pinctrl core: initialized pinctrl subsystem
+[    0.010780] regulator-dummy: no parameters
+[    0.010975] NET: Registered protocol family 16
+[    0.011471] DMA: preallocated 1024 KiB pool for atomic coherent allocations
+[    0.011819] cpuidle: using governor ladder
+[    0.011825] cpuidle: using governor menu
+[    0.017127] syscon f0404000.syscon: regmap [mem 0xf0404000-0xf0404533] registered
+[    0.017292] syscon f04a2400.syscon: regmap [mem 0xf04a2400-0xf04a2803] registered
+[    0.017438] syscon f0450000.syscon: regmap [mem 0xf0450000-0xf0450103] registered
+[    0.017582] syscon f0404100.syscon: regmap [mem 0xf0404100-0xf040413f] registered
+[    0.017731] syscon f0404140.syscon: regmap [mem 0xf0404140-0xf0404167] registered
+[    0.017887] syscon f0410700.syscon: regmap [mem 0xf0410700-0xf041070b] registered
+[    0.018034] syscon f041070c.syscon: regmap [mem 0xf041070c-0xf0410713] registered
+[    0.018180] syscon f1501004.syscon: regmap [mem 0xf1501004-0xf1501403] registered
+[    0.018318] syscon f0404080.syscon: regmap [mem 0xf0404080-0xf0404083] registered
+[    0.018469] syscon f04040a4.syscon: regmap [mem 0xf04040a4-0xf04040a7] registered
+[    0.018605] syscon f04a0154.syscon: regmap [mem 0xf04a0154-0xf04a0157] registered
+[    0.018740] syscon f04a0354.syscon: regmap [mem 0xf04a0354-0xf04a0357] registered
+[    0.018887] syscon f04a0400.syscon: regmap [mem 0xf04a0400-0xf04a0403] registered
+[    0.022330] No ATAGs?
+[    0.022348] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.022353] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.033009] bio: create slab <bio-0> at 0
+[    0.033348] brcmstb-gpio f040a000.gpio: bank=0, base=0, ngpio=32, width=32
+[    0.033358] brcmstb-gpio f040a000.gpio: bank=1, base=32, ngpio=32, width=32
+[    0.033367] brcmstb-gpio f040a000.gpio: bank=2, base=64, ngpio=32, width=32
+[    0.033376] brcmstb-gpio f040a000.gpio: bank=3, base=96, ngpio=32, width=7
+[    0.033385] brcmstb-gpio f040a000.gpio: bank=4, base=128, ngpio=32, width=6
+[    0.033396] brcmstb-gpio f040a000.gpio: Registered 5 banks (GPIO(s): 0-159)
+[    0.033439] brcmstb-gpio f0417000.gpio: bank=0, base=160, ngpio=32, width=20
+[    0.033448] brcmstb-gpio f0417000.gpio: bank=1, base=192, ngpio=32, width=2
+[    0.033456] brcmstb-gpio f0417000.gpio: Registered 2 banks (GPIO(s): 160-223)
+[    0.034245] SCSI subsystem initialized
+[    0.034881] usbcore: registered new interface driver usbfs
+[    0.034962] usbcore: registered new interface driver hub
+[    0.035058] usbcore: registered new device driver usb
+[    0.036546] Switched to clocksource arch_sys_counter
+[    0.038286] NET: Registered protocol family 2
+[    0.038679] TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.038696] TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.038721] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.038749] TCP: reno registered
+[    0.038757] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.038770] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.038879] NET: Registered protocol family 1
+[    0.039052] RPC: Registered named UNIX socket transport module.
+[    0.039058] RPC: Registered udp transport module.
+[    0.039061] RPC: Registered tcp transport module.
+[    0.039066] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.039285] hw perfevents: enabled with ARMv7 Cortex-A15 PMU driver, 7 counters available
+[    0.040012] brcm-waketimer f0417480.waketimer: registered, with irq 261
+[    0.040304] brcm-gisb-arb f0400000.gisb-arb: registered mem: fc400000, irqs: 259, 260
+[    0.041410] futex hash table entries: 512 (order: 3, 32768 bytes)
+[    0.042376] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.042544] NFS: Registering the id_resolver key type
+[    0.042576] Key type id_resolver registered
+[    0.042581] Key type id_legacy registered
+[    0.042591] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.042606] jffs2: version 2.2. (NAND) �ǩ 2001-2006 Red Hat, Inc.
+[    0.042698] fuse init (API version 7.22)
+[    0.043077] msgmni has been set to 180
+[    0.043589] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+[    0.043596] io scheduler noop registered
+[    0.043601] io scheduler deadline registered
+[    0.043620] io scheduler cfq registered (default)
+[    0.043903] pinctrl-single f04040a4.pinmux: allocating 1568 pins
+[    0.044939] pinctrl-single f04040a4.pinmux: 1568 pins at pa fc4040a4 size 196
+[    0.102553] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    0.104319] f040a900.serial: ttyS0 at MMIO 0xf040a900 (irq = 108, base_baud = 5062500) is a 16550A
+[    9.206415] console [ttyS0] enabled
+[    9.249012] f040a940.serial: ttyS1 at MMIO 0xf040a940 (irq = 109, base_baud = 5062500) is a 16550A
+[    9.357518] f040a980.serial: ttyS2 at MMIO 0xf040a980 (irq = 110, base_baud = 5062500) is a 16550A
+[    9.465482] d3881800.serial: ttyS3 at MMIO 0xd3881800 (irq = 111, base_baud = 5062500) is a 16550A
+[    9.578892] brd: module loaded
+[    9.618277] loop: module loaded
+[    9.657095] brcmnand f04a2800.nand: using HIF_INTR2 cascaded IRQ
+[    9.729148] brcmnand f04a2800.nand: enabling FLASH_DMA
+[    9.790944] nand: device found, Manufacturer ID: 0x01, Chip ID: 0xf1
+[    9.867047] nand: AMD/Spansion S34ML01G2
+[    9.914000] nand: 128MiB, SLC, page size: 2048, OOB size: 64
+[    9.981782] brcmnand f04a2800.nand: 128MiB total, 128KiB blocks, 2KiB pages, 16B OOB, 8-bit, BCH-4
+[    9.981782] 
+[   10.107141] Bad block table found at page 65472, version 0x01
+[   10.176242] Bad block table found at page 65408, version 0x01
+[   10.245391] 7 ofpart partitions found on MTD device f04a2800.nand
+[   10.318377] Creating 7 MTD partitions on "f04a2800.nand":
+[   10.383033] 0x000000000000-0x000000620000 : "flash1.kernel0"
+[   10.451533] 0x000000620000-0x000000c40000 : "flash1.kernel1"
+[   10.519968] 0x000000c40000-0x000001fa0000 : "flash1.cm0"
+[   10.584214] 0x000001fa0000-0x000003300000 : "flash1.cm1"
+[   10.648453] 0x000003300000-0x000005980000 : "flash1.rg0"
+[   10.712729] 0x000005980000-0x000008000000 : "flash1.rg1"
+[   10.776999] 0x000000000000-0x000008000000 : "flash1"
+[   10.837437] spi_brcmstb f04a3400.spi: unable to get clock
+[   10.902207] spi_brcmstb f04a3400.spi: 1-lane output, 3-byte address
+[   10.977378] spi_brcmstb f04a3400.spi: master is unqueued, this is deprecated
+[   11.062092] m25p80 spi32766.0: found mx25l12805d, expected m25p80
+[   11.135078] m25p80 spi32766.0: mx25l12805d (16384 Kbytes)
+[   11.199773] 11 ofpart partitions found on MTD device spi32766.0
+[   11.270666] Creating 11 MTD partitions on "spi32766.0":
+[   11.333238] 0x000000000000-0x000000100000 : "flash0.bolt"
+[   11.398577] 0x000000100000-0x000000120000 : "flash0.macadr"
+[   11.465940] 0x000000120000-0x000000140000 : "flash0.nvram"
+[   11.532266] 0x000000140000-0x000000160000 : "flash0.nvram1"
+[   11.599637] 0x000000160000-0x000000180000 : "flash0.devtree0"
+[   11.669095] 0x000000180000-0x0000001a0000 : "flash0.devtree1"
+[   11.738563] 0x0000001a0000-0x000000200000 : "flash0.cmnonvol0"
+[   11.809073] 0x000000200000-0x000000260000 : "flash0.cmnonvol1"
+[   11.879600] 0x000000260000-0x000000930000 : "flash0.rgnonvol0"
+[   11.950107] 0x000000930000-0x000001000000 : "flash0.rgnonvol1"
+[   12.020623] 0x000000000000-0x000001000000 : "flash0"
+[   12.082158] libphy: Fixed MDIO Bus: probed
+[   12.131504] libphy: UniMAC MDIO bus: probed
+[   12.181589] unimac-mdio d040062c.mdio: Broadcom UniMAC MDIO bus at 0xd09f662c
+[   12.267184] libphy: UniMAC MDIO bus: probed
+[   12.317266] unimac-mdio d4e403c0.mdio: Broadcom UniMAC MDIO bus at 0xd09f83c0
+[   12.403174] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB Ethernet driver
+[   12.491853] usbcore: registered new interface driver pegasus
+[   12.559709] usbcore: registered new interface driver asix
+[   12.624429] usbcore: registered new interface driver ax88179_178a
+[   12.697479] usbcore: registered new interface driver cdc_ether
+[   12.767426] usbcore: registered new interface driver cdc_ncm
+[   12.835494] usb-brcm f1000200.usb: Clock not found in Device Tree
+[   12.967142] usb-brcm f1010200.usb: Clock not found in Device Tree
+[   13.097243] xhci-brcm: xHCI BRCM driver
+[   13.143299] xhci-brcm f1001000.xhci: Clock not found in Device Tree
+[   13.218367] xhci-brcm f1001000.xhci: xHCI Host Controller
+[   13.283184] xhci-brcm f1001000.xhci: new USB bus registered, assigned bus number 1
+[   13.374004] xhci-brcm f1001000.xhci: irq 117, io mem 0xf1001000
+[   13.445439] hub 1-0:1.0: USB hub found
+[   13.490335] hub 1-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[   13.575941] xhci-brcm f1001000.xhci: xHCI Host Controller
+[   13.640732] xhci-brcm f1001000.xhci: new USB bus registered, assigned bus number 2
+[   13.731921] hub 2-0:1.0: USB hub found
+[   13.776814] hub 2-0:1.0: 1 port detected
+[   13.823988] xhci-brcm f1011000.xhci: Clock not found in Device Tree
+[   13.899060] xhci-brcm f1011000.xhci: xHCI Host Controller
+[   13.963906] xhci-brcm f1011000.xhci: new USB bus registered, assigned bus number 3
+[   14.054717] xhci-brcm f1011000.xhci: irq 118, io mem 0xf1011000
+[   14.126172] hub 3-0:1.0: USB hub found
+[   14.171067] hub 3-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[   14.256664] xhci-brcm f1011000.xhci: xHCI Host Controller
+[   14.321448] xhci-brcm f1011000.xhci: new USB bus registered, assigned bus number 4
+[   14.412617] hub 4-0:1.0: USB hub found
+[   14.457511] hub 4-0:1.0: 1 port detected
+[   14.504701] ehci-brcm: EHCI BRCM driver
+[   14.550790] ehci-brcm f1000300.ehci: Clock not found in Device Tree
+[   14.625861] ehci-brcm f1000300.ehci: can't request region for resource [mem 0xf1000300-0xf10003ab]
+[   14.733203] ehci-brcm: probe of f1000300.ehci failed with error -16
+[   14.808291] ehci-brcm f1010300.ehci: Clock not found in Device Tree
+[   14.883354] ehci-brcm f1010300.ehci: can't request region for resource [mem 0xf1010300-0xf10103ab]
+[   14.990688] ehci-brcm: probe of f1010300.ehci failed with error -16
+[   15.065883] ohci-brcm: OHCI BRCM driver
+[   15.111933] ohci-brcm f1000400.ohci: Clock not found in Device Tree
+[   15.187006] ohci-brcm f1000400.ohci: BRCM OHCI controller
+[   15.251856] ohci-brcm f1000400.ohci: new USB bus registered, assigned bus number 5
+[   15.342574] ohci-brcm f1000400.ohci: irq 115, io mem 0xf1000400
+[   15.471059] hub 5-0:1.0: USB hub found
+[   15.515953] hub 5-0:1.0: 1 port detected
+[   15.563106] ohci-brcm f1010400.ohci: Clock not found in Device Tree
+[   15.638180] ohci-brcm f1010400.ohci: BRCM OHCI controller
+[   15.702994] ohci-brcm f1010400.ohci: new USB bus registered, assigned bus number 6
+[   15.793706] ohci-brcm f1010400.ohci: irq 116, io mem 0xf1010400
+[   15.921052] hub 6-0:1.0: USB hub found
+[   15.965944] hub 6-0:1.0: 1 port detected
+[   16.013143] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[   16.091336] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[   16.165517] usbcore: registered new interface driver usb-storage
+[   16.237865] bcm7038-wdt f040a128.watchdog: Registered Broadcom Watchdog
+[   16.317257] bcm7038-wdt f10b0928.watchdog: Registered Broadcom Watchdog
+[   16.396657] bcm7038-wdt f040a200.watchdog: Registered Broadcom Watchdog
+[   16.476070] cpufreq_cpu0: failed to get cpu0 regulator: -19
+[   16.542805] cpufreq_cpu0: failed to get cpu0 clock: -2
+[   16.604337] cpufreq-cpu0: probe of cpufreq-cpu0.0 failed with error -2
+[   16.682655] sdhci: Secure Digital Host Controller Interface driver
+[   16.756672] sdhci: Copyright(c) Pierre Ossman
+[   16.808832] sdhci-pltfm: SDHCI platform and OF driver helper
+[   16.876657] sdhci-brcmstb f04a0000.sdhci: Clock not found in Device Tree
+[   16.957969] mmc0: no vqmmc regulator found
+[   17.007007] mmc0: no vmmc regulator found
+[   17.096555] mmc0: SDHCI controller on f04a0000.sdhci [f04a0000.sdhci] using ADMA
+[   17.206690] brcm-fpm: FPM with 1 pool(s)
+[   17.254266] brcm-dqm: DQM device cpucomm with 96 Q's
+[   17.314068] ethsw_init_plat: Device name: ethsw
+[   17.368313] ethsw_init_plat: MII port params: <0x4 0 0x3e8>
+[   17.435046] ethsw_init_plat: IMP port params: <0x5 0x7d0>
+[   17.499696] ethsw_init_plat: IMP port params: <0x7 0x7d0>
+[   17.564346] ethsw_init_plat: IMP port params: <0x8 0x7d0>
+[   17.628993] ethsw_init_plat: LED map: 0xf
+[   17.676989] ethsw_init_plat: Device mem: 0xd4e00000 - 0xd4e41fff
+[   17.748935] ethsw_init_plat: Device irq0: 145
+[   17.801099] ethsw_init_plat: Device irq1: 146
+[   17.853267] ethsw_phy: PHY port params for 0: <0x0 0x2>
+[   17.915836] ethsw_phy: PHY port params for 1: <0x1 0x3>
+[   17.978399] ethsw_phy: PHY port params for 2: <0x2 0x4>
+[   18.040967] ethsw_phy: PHY port params for 3: <0x3 0x5>
+[   18.103552] ethsw_flow_control: Enabling ACB
+[   18.154666] ethsw_core: Resetting Switch Chip to defaults
+[   18.219339] ethsw_core: Ethsw core initialized
+[   18.272749] ethsw_3390: Device ID 3390
+[   18.316422] libphy: ethsw_mdio: probed
+[   18.363384] ethsw_phy: MDIO bus registration succeeded
+[   18.425803] ethsw_phy: Ethsw PHY initialized
+[   18.476990] ethsw_int: Ethsw interrupt initialized
+[   18.534361] ethsw_api: Port 0 config reset
+[   18.583422] ethsw_api: Port 0 config set: auto_neg = 1, full_duplex = 1, speed = 2
+[   18.674284] ethsw_api: Port 0 disabled
+[   18.719155] ethsw_api: Port 1 config reset
+[   18.768215] ethsw_api: Port 1 config set: auto_neg = 1, full_duplex = 1, speed = 2
+[   18.859067] ethsw_api: Port 1 disabled
+[   18.903936] ethsw_api: Port 2 config reset
+[   18.952994] ethsw_api: Port 2 config set: auto_neg = 1, full_duplex = 1, speed = 2
+[   19.043852] ethsw_api: Port 2 disabled
+[   19.088731] ethsw_api: Port 3 config reset
+[   19.137790] ethsw_api: Port 3 config set: auto_neg = 1, full_duplex = 1, speed = 2
+[   19.228645] ethsw_api: Port 3 disabled
+[   19.273545] ethsw_proc: /proc/driver/ethsw dir and files created
+[   19.345485] ethsw_proc: Ethsw proc initialized
+[   19.398685] ethsw_init_plat: Ethsw driver probed
+[   19.454084] ethsw_init_plat: Ethsw module initialized
+[   19.514582] rpc_service_init: initializing rpc_init service
+[   19.581349] rpc_register_functions registered rpc_init service with 1 functions
+[   19.668915] rpc_service_init: initializing rpc_misc service
+[   19.735687] rpc_service_init: initializing rpc_flash service
+[   19.803490] rpc_service_init: skipping inactive rpc_nonvol service
+[   19.877510] rpc_service_init: initializing rpc_erouter service
+[   19.947404] rpc_service_init: skipping inactive rpc_erouter_pm service
+[   20.025595] rpc_service_init: initializing rpc_wpsctl service
+[   20.094442] rpc_service_init: skipping inactive rpc_bash service
+[   20.166389] rpc_service_init: skipping inactive rpc_testu service
+[   20.239485] dev-name = rg-cm
+[   20.273950] dqm = cpucomm
+[   20.305287] tx-q = 2h
+[   20.332464] rx-q = 3h
+[   20.359654] rpc_probe sent handshake message
+[   20.410789] dev-name = svm-cm
+[   20.446290] dqm = cpucomm
+[   20.477630] tx-q = 14h
+[   20.505846] rx-q = 15h
+[   20.534073] rpc_probe sent handshake message
+[   20.586528] rpc_register_functions registered rpc_misc service with 5 functions
+[   20.674389] gre: GRE over IPv4 demultiplexor driver
+[   20.732798] ip_gre: GRE over IPv4 tunneling driver
+[   20.791035] TCP: cubic registered
+[   20.830750] NET: Registered protocol family 10
+[   20.884969] ip6_gre: GRE over IPv6 tunneling driver
+[   20.943862] NET: Registered protocol family 17
+[   20.997112] Bridge firewalling registered
+[   21.045156] Initializing MCPD Module
+[   21.088292] 8021q: 802.1Q VLAN Support v1.8
+[   21.138402] Key type dns_resolver registered
+[   21.189580] Registering SWP/SWPB emulation handler
+[   21.247578] regulator-dummy: disabling
+[   21.292735] UBI: attaching mtd5 to ubi0
+[   21.509071] UBI: scanning is finished
+[   21.560010] UBI: attached mtd5 (name "flash1.rg1", size 38 MiB) to ubi0
+[   21.639238] UBI: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[   21.720543] UBI: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[   21.800812] UBI: VID header offset: 2048 (aligned 2048), data offset: 4096
+[   21.883158] UBI: good PEBs: 304, bad PEBs: 4, corrupted PEBs: 0
+[   21.954056] UBI: user volume: 2, internal volumes: 1, max. volumes count: 128
+[   22.039529] UBI: max/mean erase counter: 3/1, WL threshold: 256, image sequence number: 1523389265
+[   22.146865] UBI: available PEBs: 0, total reserved PEBs: 304, PEBs reserved for bad PEB handling: 16
+[   22.256365] UBI: background thread "ubi_bgt0d" started, PID 1153
+[   22.401467] UBIFS: mounted UBI device 0, volume 0, name "rootfs", R/O mode
+[   22.483827] UBIFS: LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   22.593242] UBIFS: FS size: 9015296 bytes (8 MiB, 71 LEBs), journal size 4317184 bytes (4 MiB, 34 LEBs)
+[   22.705777] UBIFS: reserved for root: 0 bytes (0 KiB)
+[   22.766266] UBIFS: media format: w4/r0 (latest is w4/r0), UUID 7D38F138-DB11-4161-A67E-A138EEA12A1B, small LPT model
+[   22.893800] VFS: Mounted root (ubifs filesystem) readonly on device 0:13.
+[   22.976295] devtmpfs: mounted
+[   23.011946] Freeing unused kernel memory: 256K (c06b8000 - c06f8000)
+starting pid 1163, tty '': '/etc/init.d/rcS'
+Mounting virtual filesystems
+[   23.312737] random: nonblocking pool is initialized
+==============================
+CHIP:3390
+MANUFACT_BITS: D007
+BOARD ID: 00000061
+HYPERVISOR: n
+SUBSYSTEM: rg
+VFLASH: n
+STB VFLASH: n
+EXTENSION: -dcm
+KERNEL: vmlinuz-3390b0-dcm
+STARTUP: BA=y RC=y AUTO=y
+==============================
+Mounting flash0.rgnonvol0 (mtd 15) to /data
+Mounting flash0.rgnonvol1 (mtd 16) to /data_bak
+ubi.mtd=flash1.rg1 rootfstype=ubifs root=ubi0:[   23.870183] UBI: attaching mtd2 to ubi1
+rootfs platformboot ubifs_apps jffs2_data coherent_pool=1M noconsole
+non-initrd boot, mirror in[   24.007271] UBI: scanning is finished
+dex detected as [   24.071232] UBI: attached mtd2 (name "flash1.cm0", size 19 MiB) to ubi1
+1
+Attaching MTD[   24.160082] UBI: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ 2 to UBI device[   24.258043] UBI: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ 1
+[   24.354953] UBI: VID header offset: 2048 (aligned 2048), data offset: 4096
+[   24.441452] UBI: good PEBs: 155, bad PEBs: 0, corrupted PEBs: 0
+[   24.512352] UBI: user volume: 1, internal volumes: 1, max. volumes count: 128
+[   24.597823] UBI: max/mean erase counter: 2/0, WL threshold: 256, image sequence number: 1904993879
+[   24.705154] UBI: available PEBs: 0, total reserved PEBs: 155, PEBs reserved for bad PEB handling: 20
+[   24.814610] UBI: background thread "ubi_bgt1d" started, PID 1337
+UBI device numbe[   24.890712] UBIFS: background thread "ubifs_bgt1_1" started, PID 1344
+r 1, total 155 LEBs (19681280 bytes, 18.8 MiB), [   25.016228] UBIFS: recovery needed
+available 0 LEBs (0 bytes), LEB size 126976 bytes (124.0 KiB)
+Mounting flash1.c[   25.139669] UBIFS: recovery completed
+m0 (mtd 2) to /m[   25.199345] UBIFS: mounted UBI device 1, volume 1, name "images"
+nt/flash
+[   25.287882] UBIFS: LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   25.407687] UBIFS: FS size: 15364096 bytes (14 MiB, 121 LEBs), journal size 4317184 bytes (4 MiB, 34 LEBs)
+[   25.523352] UBIFS: reserved for root: 0 bytes (0 KiB)
+[   25.583846] UBIFS: media format: w4/r0 (latest is w4/r0), UUID 70267DB4-C7AE-4E25-8F39-F763D305EF28, small LPT model
+Mounting flash0.cmnonvol0 (mtd 13) to /mnt/cmnonvol
+Mounting flash0.cmnonvol1 (mtd 14) to /mnt/cmnonvol_bak
+Check file /mnt/cmnonvol/cm_dyn.bin
+File /mnt/cmnonvol/cm_dyn.bin matches HCS32
+Check file /mnt/cmnonvol/cm_perm.bin
+File /mnt/cmnonvol/cm_perm.bin matches HCS32
+Failed to retrieve SPRINGEVENT variable, defaulting to 0
+springevent=0
+Configuring private network
+Disable IPv6
+  
+Load Runner Driver
+  
+[   26.204081] rdpa: module license 'Proprietary' taints kernel.
+[   26.272942] Disabling lock debugging due to kernel taint
+[   26.398138] RDP Physical address=0xd5000000 Virtual address = 0xd0e00000
+[   26.485639] passing rdd_init_params.runner_iptv_tables_base_ptr=0x9b00000
+[   26.628222] configure_runner: NATC keysize 0x100070 key element size 16 contextsize 0x400000 context element size 64
+[   26.768187] rdd_init_params.runner_nat_cache_key_ptr=0xd3200000
+[   26.839085] g_runner_ddr0_iptv_lookup_ptr=0xd3440000
+[   26.898532] g_runner_ddr0_iptv_context_ptr=0xd3400000
+[   26.959029] g_runner_ddr0_iptv_ssm_context_ptr=0xd3480000
+[   27.246797] FPM_BPM phy_addr 0xd3a30000,virt_addr 0xd0dc4000
+[   27.616682] brcm-dqnet: net device priv0
+[   27.663773] ethsw_api: Device eth0 connected to port 0
+[   27.776577] brcm-dqnet: net device eth0
+[   27.822633] ethsw_api: Device eth1 connected to port 1
+[   27.956579] brcm-dqnet: net device eth1
+[   28.056677] brcm-dqnet: net device cm0
+[   28.177735] device priv0 entered promiscuous mode
+[   28.236879] IPv6: ADDRCONF(NETDEV_UP): priv0: link is not ready
+[   28.313663] IPv6: ADDRCONF(NETDEV_UP): privbr: link is not ready
+[   28.386018] IPv6: ADDRCONF(NETDEV_UP): privbr: link is not ready
+Mounting flash1.UBIFS: background thread "ubifs_bgt0_1" started, PID 1701
+rg1 (mtd 5) to /mnt/apps
+UBIFS: recovery needed
+UBIFS: recovery completed
+UBIFS: mounted UBI device 0, volume 1, name "apps"
+UBIFS: LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS: FS size: 24506368 bytes (23 MiB, 193 LEBs), journal size 4317184 bytes (4 MiB, 34 LEBs)
+UBIFS: reserved for root: 0 bytes (0 KiB)
+UBIFS: media format: w4/r0 (latest is w4/r0), UUID 8C2A687A-A1B6-4B4D-B986-5893699FF19D, small LPT model
+Cannot run mboxassist, another instance is running?
+Starting user apps services
+==============================
+CHIP:3390
+MANUFACT_BITS: D007
+BOARD ID: 00000061
+HYPERVISOR: n
+SUBSYSTEM: rg
+VFLASH: n
+STB VFLASH: n
+EXTENSION: -dcm
+KERNEL: vmlinuz-3390b0-dcm
+STARTUP: BA=y RC=y AUTO=y
+==============================
+  
+brcmklogd: Started
+  
+                          *
+                         * *
+                         * *
+                        *   *
+                        *   *
+                       *     *
+                       *     *
+                       *     *
+                      *       *
+                      *       *
+                      *       *
+                     *         *
+                     *         *
+                     *         *
+                     *         *
+                    *           *
+          *         *           *         *
+        *   *       *           *       *   *          ***
+*     *      *     *             *     *      *     *       *******************
+   *          *   *               *   *          *
+                *                   *
+  
+Broadcom Corporation Reference Design
+  
+ +------------------------------------------------------------------------------------------------+
+ |       _/_/      _/     _/     _/_/_/                                                           |
+ |    _/    _/    _/_/ _/_/    _/                                                                 |
+ |   _/          _/  _/ _/    _/                                                                  |
+ |  _/          _/     _/       _/_/                                                              |
+ | _/          _/     _/          _/                                                              |
+ |_/    _/    _/     _/          _/                                                               |
+ | _/_/      _/     _/     _/_/_/                                                                 |
+ |                                                                                                |
+ | Copyright (c) 1999 - 2016 Broadcom Corporation                                                 |
+ |                                                                                                |
+ | Revision       : Prod_6.1.0                                                                    |
+ |                                                                                                |
+ | Features       : IPv6 Stack Version 1.2.0                                                      |
+ |                                                                                                |
+ +------------------------------------------------------------------------------------------------+
+ | Build Date     : Nov 04 2016                                                                   |
+ | Build Time     : 09:46:47 (-0700)                                                              |
+ | Build Location : /view_store/mgi2739/mgi2739_snapshot_view_w/vobs/sb/sb_ecos/rg/rg_apps        |
+ | Build By       : mgi2739                                                                       |
+ | Build Tag      :                                                                               |
+ | Build Options  : BRCM_3390 BRCM_CHIP=3390 PROFILE_ARCH=arm BRCM_BOARD_93390DCM                 |
+ | Build Options  : BRCM_BOARD_ID=93390DCM BUILD_BDMF_SHELL BRCM_CABLE BRCM_CABLE_ARM             |
+ | Build Options  : LINUX_3_14_STB PROFILE_KERNEL_VER=LINUX_3_14_STB BUILD_BRCM_CMS               |
+ | Build Options  : BUILD_DM_PURE181 BUILD_BACKUP_PSI COMPRESSED_CONFIG_FILE                      |
+ | Build Options  : CMS_CONFIG_IGNORE_UNRECOGNIZED BUILD_MDM_VERSIONING BUILD_BRCTL BUILD_IPV6    |
+ | Build Options  : BUILD_SNTP BUILD_IEEE1905 BUILD_EBTABLES BUILD_EROUTERCTL                     |
+ | Build Options  : BUILD_EROUTERCTL_CM BUILD_BRONLY_MODE BUILD_MTA BUILD_CONSOLED BUILD_CLI_CMD  |
+ | Build Options  : BUILD_TELNETD BUILD_HTTPD BUILD_WEBSOCKET BRCM_LANG_EN BRCM_WEBUI_LANG=en_US  |
+ | Build Options  : MGMT_none BUILD_TR69C= BUILD_TR69C_SSL= BUILD_TR69C_BCM_SSL= BRCM_CERT_FILE=  |
+ | Build Options  : BUILD_MSO_NONE BUILD_SNMP BUILD_DEBUG_TOOLS ENABLE_APP_COREDUMPS              |
+ | Build Options  : CMS_LOG_DEBUG CMS_LOG_LEVEL_2 CMS_BYPASS_LOGIN BUILD_CMS_UNIT_TESTS           |
+ +------------------------------------------------------------------------------------------------+
+ | Linux Kernel                                                                                   |
+ |                                                                                                |
+ | Revision       : 3.14.28-rgProd_6.1.0#5 SMP Fri Nov 4 09:46:15 PDT 2016                        |
+ |                                                                                                |
+ +------------------------------------------------------------------------------------------------+
+DQM Init complete for dqm tunnel svm-cm
+DQM Init complete for dqm tunnel rg-cm
+ | RUNNER                                                                                         |
+ |                                                                                                |
+ | Copyright (c) 1999 - 2016 Broadcom Corporation                                                 |
+ |                                                                                                |
+ | Revision       : 1.4.0 Software: 112710 Firmware: 110221                                       |
+ +------------------------------------------------------------------------------------------------+
+ | BOLT                                                                                           |
+ |                                                                                                |
+ | Copyright (c) 1999 - 2016 Broadcom Corporation                                                 |
+ |                                                                                                |
+ | Revision       : 1.16                                                                          |
+ | Build Timestamp: 2016-11-01 10:49:04                                                           |
+ | Build Tag      : v1.16_B1                                                                      |
+ | Build By       : arris@Touchtone-006                                                           |
+ +------------------------------------------------------------------------------------------------+
+ip_tables: (C) 2000-2006 Netfilter Core Team
+Netfilter messages via NETLINK v0.30.
+nf_conntrack version 0.5.0 (1447 buckets, 5788 max)
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+Ebtables v2.0 registered
+ssk:error:34.648:rut2Lan_setEthernetMacAddr:480:RG need provision first!
+ssk:error:34.656:rut2Lan_setEthernetMacAddr:480:RG need provision first!
+ethsw_api: Port 0 enabled
+IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+8021q: adding VLAN 0 to HW filter on device eth0
+ethsw_api: Port 1 enabled
+IPv6: ADDRCONF(NETDEV_UP): eth1: link is not ready
+8021q: adding VLAN 0 to HW filter on device eth1
+IPv6: ADDRCONF(NETDEV_UP): cm0: link is not ready
+device cm0 entered promiscuous mode
+device eth0 entered promiscuous mode
+device eth1 entered promiscuous mode
+device eth0 is already a member of a bridge; can't enslave it to bridge br0.
+device eth1 is already a member of a bridge; can't enslave it to bridge br0.
+rpc_service_init: initializing rpc_erouter_pm service
+registered userspace service 5 functions
+dnssniff - Sniff dns response using ebtables
+  
+rpc_register_functions registered rpc_erouter_pm service with 256 functions
+STARTUP with noconsle, no action
+Error! Cannot get a valid IEEE1905 MAC address, use a random MAC address!1905 MAC: 00:01:02:82:63:cd
+IPv6: ADDRCONF(NETDEV_CHANGE): priv0: link becomes ready
+privbr: port 1(priv0) entered forwarding state
+privbr: port 1(priv0) entered forwarding state
+IPv6: ADDRCONF(NETDEV_CHANGE): privbr: link becomes ready
+device vethpriv entered promiscuous mode
+device vethwan entered promiscuous mode
+IPv6: ADDRCONF(NETDEV_UP): vethwan: link is not ready
+wanbridge: port 4(vethwan) entered forwarding state
+wanbridge: port 4(vethwan) entered forwarding state
+privbr: port 2(vethpriv) entered forwarding state
+privbr: port 2(vethpriv) entered forwarding state
+IPv6: ADDRCONF(NETDEV_CHANGE): vethwan: link becomes ready
+registered userspace service 4 functions
+rpc_register_functions registered rpc_erouter service with 256 functions
+FLOWMGR: Set wandev to cm0
+FLOWMGR Init: v0.5 Nov  3 2016 17:40:19
+FLOMGR Register fap: 3
+FLOWMGR: proc cmd - fap_config br0 wanbridge
+FLOWMGR: proc cmd - fap_enable 1
+FAP Pkt Replacement 1
+erouterctld:38.257:main:1525:rpc_message_to_cm: 11 1 5 0
+  
+erouterctld:38.258:main:1525:rpc_message_to_cm: 11 1 5 3
+  
+Runner Transparent Forwarding Module (RTF) Init: v0.2 Nov  4 2016 09:46:27
+rtf: proc cmd - host_inf wanbridge
+DQNET: proc cmd - brcmtag_opcode uc 1
+rtf: proc cmd - enable 1
+device vethwan left promiscuous mode
+wanbridge: port 4(vethwan) entered disabled state
+privbr: port 2(vethpriv) entered disabled state
+httpd_arris:error:52.206:dalLan_getIpIntfInfo_dev2:924:No matched Device.IP.Interface.{i}. to this ifName - br0
+httpd_arris:error:52.207:dalLan_getDhcpServerInfo_dev2:1041:No matched Device.DHCPv4.Server.Pool.{i}. to this bridgeIfName
+httpd_arris:error:52.208:dalLan_getIpIntfMtuSize_dev2:1167:No matched Device.IP.Interface.{i}. to this ifName - br0
+httpd_arris:error:52.210:lck_checkBeforeEntry:255:lock required during cmsObj_getNextInSubTreeFlags
+httpd_arris:error:52.522:readMessageFromSmd:2418:unrecognized msg 0x10000250 from 20 (flags=0xb6f90001)
+privbr: port 1(priv0) entered forwarding state

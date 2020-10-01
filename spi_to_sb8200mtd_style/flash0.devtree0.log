@@ -1,0 +1,31 @@
+Target File:   /Arris-CM8200B-Reverse-Engineering/devtree/flash0.devtree0
+MD5 Checksum:  e3e92dbc3b83f1ad21ff01be6ab69eed
+Signatures:    391
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             gzip compressed data, from Unix, last modified: 2019-07-18 18:56:36
+
+Target File:   /Arris-CM8200B-Reverse-Engineering/devtree/_flash0.devtree0.extracted/0
+MD5 Checksum:  9fdab56e61194d3e8a93534cf195258f
+Signatures:    391
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             POSIX tar archive (GNU), owner user name: "0-dcm.dtb"
+
+Target File:   /Arris-CM8200B-Reverse-Engineering/devtree/_flash0.devtree0.extracted/_0.extracted/rg.3390b0-dcm.dtb
+MD5 Checksum:  4659a425e4dbda045e388214c1685165
+Signatures:    391
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             device tree image (dtb)
+
+Target File:   /Arris-CM8200B-Reverse-Engineering/devtree/_flash0.devtree0.extracted/_0.extracted/rg.3390z0-dcm.dtb
+MD5 Checksum:  c03bb89b755698d6420ec9a52dc42809
+Signatures:    391
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             device tree image (dtb)
