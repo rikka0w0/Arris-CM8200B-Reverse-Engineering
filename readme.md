@@ -1,3 +1,8 @@
+readme
+======
+
+
+
 This is a forked repo which contains the outcome of the reverse engineering work performed on Arris CM8200 __B__ __P2__.
 
 # Files
@@ -7,3 +12,4 @@ This is a forked repo which contains the outcome of the reverse engineering work
 * pictures/ - Contains pictures of CM8200B P2 and related products
 * tools/ - Some of the tools which may help with reverse engineering
 * docs/asuswrt-merlin.ng/release/src-rt-5.02hnd - Mirrored copy of [RMerl/asuswrt.ng/release/src-rt-5.02hnd](https://github.com/RMerl/asuswrt-merlin.ng/tree/master/release/src-rt-5.02hnd)
+* oss/ - [Commscope 8200 Cable Modem OSS](https://sourceforge.net/projects/c8200-cable-modem.arris/files/) open source software. Directory contains `split` files
