@@ -1,0 +1,1488 @@
+--- /proc/self/fd/11	2019-12-09 21:46:44.799606120 +1000
++++ /proc/self/fd/12	2019-12-09 21:46:44.799606120 +1000
+@@ -9,11 +9,11 @@
+ 	interrupt-parent = <0x01>;
+ 
+ 	identifier {
+-		chipid_reg = <0x20404000 0x204e6120 0x20410068>;
+-		chipid_msk = <0xffffffff 0xe000 0x01>;
+-		chipid_val = <0x33900010 0xc000 0x00>;
+-		boardid_msk = <0xff 0xf0>;
+-		boardid_val = <0x61 0x70>;
++		chipid_reg = <0x20404000 0x204e6120>;
++		chipid_msk = <0xffffffff 0xe000>;
++		chipid_val = <0x33900010 0xc000>;
++		boardid_msk = <0xf0 0xf0>;
++		boardid_val = <0x60 0x70>;
+ 	};
+ 
+ 	chosen {
+@@ -49,13 +49,10 @@
+ 			enable-method = "brcm,brahma-b15";
+ 			compatible = "brcm,brahma-b15\0arm,cortex-a15";
+ 			reg = <0x00>;
+-			clocks = <0x0e>;
++			clocks = <0x19>;
+ 			clock-latency = <0x12c0>;
+ 			clock-frequency = <0x5995f5c0>;
+-			operating-points = <0xb778c 0x00 0x5bbc6 0x00 0x2dde3 0x00 0x16ef2 0x00>;
+-			cooling-min-state = <0x00>;
+-			cooling-max-state = <0x04>;
+-			#cooling-cells = <0x02>;
++			operating-points = <0x16ef18 0x00 0xb778c 0x00 0x5bbc6 0x00 0x2dde3 0x00 0x16ef2 0x00>;
+ 		};
+ 
+ 		cpu@1 {
+@@ -64,6 +61,20 @@
+ 			compatible = "brcm,brahma-b15\0arm,cortex-a15";
+ 			reg = <0x01>;
+ 		};
++
++		cpu@2 {
++			device_type = "cpu";
++			enable-method = "brcm,brahma-b15";
++			compatible = "brcm,brahma-b15\0arm,cortex-a15";
++			reg = <0x02>;
++		};
++
++		cpu@3 {
++			device_type = "cpu";
++			enable-method = "brcm,brahma-b15";
++			compatible = "brcm,brahma-b15\0arm,cortex-a15";
++			reg = <0x03>;
++		};
+ 	};
+ 
+ 	timer {
+@@ -134,7 +145,7 @@
+ 		interrupt-map = <0x00 0x00 0x00 0x01 0x01 0x2b 0x03 0x00 0x00 0x00 0x02 0x01 0x2c 0x03 0x00 0x00 0x00 0x03 0x01 0x2d 0x03 0x00 0x00 0x00 0x04 0x01 0x2e 0x03>;
+ 		interrupt-names = "pcie0_inta\0pcie0_intb\0pcie0_intc\0pcie0_intd";
+ 		brcm,ssc;
+-		clocks = <0x19>;
++		clocks = <0x1a>;
+ 		clock-names = "sw_pcie";
+ 	};
+ 
+@@ -180,7 +191,7 @@
+ 		interrupt-map = <0x00 0x00 0x00 0x01 0x01 0x32 0x03 0x00 0x00 0x00 0x02 0x01 0x33 0x03 0x00 0x00 0x00 0x03 0x01 0x34 0x03 0x00 0x00 0x00 0x04 0x01 0x35 0x03>;
+ 		interrupt-names = "pcie1_inta\0pcie1_intb\0pcie1_intc\0pcie1_intd";
+ 		brcm,ssc;
+-		clocks = <0x19>;
++		clocks = <0x1a>;
+ 		clock-names = "sw_pcie";
+ 	};
+ 
+@@ -198,7 +209,7 @@
+ 		interrupt-map = <0x00 0x00 0x00 0x01 0x01 0x59 0x03 0x00 0x00 0x00 0x02 0x01 0x5a 0x03 0x00 0x00 0x00 0x03 0x01 0x5b 0x03 0x00 0x00 0x00 0x04 0x01 0x5c 0x03>;
+ 		interrupt-names = "pcie2_inta\0pcie2_intb\0pcie2_intc\0pcie2_intd";
+ 		brcm,ssc;
+-		clocks = <0x19>;
++		clocks = <0x1a>;
+ 		clock-names = "sw_pcie";
+ 	};
+ 
+@@ -261,7 +272,7 @@
+ 			has_xhci;
+ 			linux,phandle = <0x08>;
+ 			phandle = <0x08>;
+-			clocks = <0x1a 0x1b>;
++			clocks = <0x1b 0x1c>;
+ 			clock-names = "sw_usb";
+ 		};
+ 
+@@ -272,7 +283,7 @@
+ 			interrupt-names = "usb0_ehci_0";
+ 			phys = <0x08 0x00>;
+ 			phy-names = "usbphy";
+-			clocks = <0x1a>;
++			clocks = <0x1b>;
+ 			clock-names = "sw_usb";
+ 		};
+ 
+@@ -283,7 +294,7 @@
+ 			interrupt-names = "usb0_ohci_0";
+ 			phys = <0x08 0x00>;
+ 			phy-names = "usbphy";
+-			clocks = <0x1a>;
++			clocks = <0x1b>;
+ 			clock-names = "sw_usb";
+ 		};
+ 
+@@ -294,7 +305,7 @@
+ 			interrupt-names = "usb0_xhci_0";
+ 			phys = <0x08 0x01>;
+ 			phy-names = "usbphy";
+-			clocks = <0x1b>;
++			clocks = <0x1c>;
+ 			clock-names = "sw_usb";
+ 		};
+ 
+@@ -310,7 +321,7 @@
+ 			has_xhci;
+ 			linux,phandle = <0x09>;
+ 			phandle = <0x09>;
+-			clocks = <0x1a 0x1b>;
++			clocks = <0x1b 0x1c>;
+ 			clock-names = "sw_usb";
+ 			status = "disabled";
+ 		};
+@@ -322,7 +333,7 @@
+ 			interrupt-names = "usb1_ehci_0";
+ 			phys = <0x09 0x00>;
+ 			phy-names = "usbphy";
+-			clocks = <0x1a>;
++			clocks = <0x1b>;
+ 			clock-names = "sw_usb";
+ 			status = "disabled";
+ 		};
+@@ -334,7 +345,7 @@
+ 			interrupt-names = "usb1_ohci_0";
+ 			phys = <0x09 0x00>;
+ 			phy-names = "usbphy";
+-			clocks = <0x1a>;
++			clocks = <0x1b>;
+ 			clock-names = "sw_usb";
+ 			status = "disabled";
+ 		};
+@@ -346,7 +357,7 @@
+ 			interrupt-names = "usb1_xhci_0";
+ 			phys = <0x09 0x01>;
+ 			phy-names = "usbphy";
+-			clocks = <0x1b>;
++			clocks = <0x1c>;
+ 			clock-names = "sw_usb";
+ 			status = "disabled";
+ 		};
+@@ -376,7 +387,7 @@
+ 				reg = <0xf1000300 0xa8>;
+ 				interrupts = <0x00 0x51 0x00>;
+ 				interrupt-names = "usb0_ehci_0";
+-				clocks = <0x1a>;
++				clocks = <0x1b>;
+ 				clock-names = "sw_usb";
+ 			};
+ 
+@@ -385,7 +396,7 @@
+ 				reg = <0xf1000400 0x58>;
+ 				interrupts = <0x00 0x53 0x00>;
+ 				interrupt-names = "usb0_ohci_0";
+-				clocks = <0x1a>;
++				clocks = <0x1b>;
+ 				clock-names = "sw_usb";
+ 			};
+ 
+@@ -394,7 +405,7 @@
+ 				reg = <0xf1001000 0x1000>;
+ 				interrupts = <0x00 0x55 0x00>;
+ 				interrupt-names = "usb0_xhci_0";
+-				clocks = <0x1b>;
++				clocks = <0x1c>;
+ 				clock-names = "sw_usb";
+ 			};
+ 		};
+@@ -414,7 +425,7 @@
+ 				reg = <0xf1010300 0xa8>;
+ 				interrupts = <0x00 0x52 0x00>;
+ 				interrupt-names = "usb1_ehci_0";
+-				clocks = <0x1a>;
++				clocks = <0x1b>;
+ 				clock-names = "sw_usb";
+ 				status = "disabled";
+ 			};
+@@ -424,7 +435,7 @@
+ 				reg = <0xf1010400 0x58>;
+ 				interrupts = <0x00 0x54 0x00>;
+ 				interrupt-names = "usb1_ohci_0";
+-				clocks = <0x1a>;
++				clocks = <0x1b>;
+ 				clock-names = "sw_usb";
+ 				status = "disabled";
+ 			};
+@@ -434,7 +445,7 @@
+ 				reg = <0xf1011000 0x1000>;
+ 				interrupts = <0x00 0x56 0x00>;
+ 				interrupt-names = "usb1_xhci_0";
+-				clocks = <0x1b>;
++				clocks = <0x1c>;
+ 				clock-names = "sw_usb";
+ 				status = "disabled";
+ 			};
+@@ -481,7 +492,7 @@
+ 			interrupts = <0x00 0x23 0x00>;
+ 			interrupt-names = "sdio0_0";
+ 			sdhci,auto-cmd12;
+-			clocks = <0x1c>;
++			clocks = <0x1d>;
+ 			clock-names = "sw_sdio";
+ 		};
+ 
+@@ -492,7 +503,7 @@
+ 			interrupts = <0x00 0x24 0x00>;
+ 			interrupt-names = "sdio1_0";
+ 			sdhci,auto-cmd12;
+-			clocks = <0x1c>;
++			clocks = <0x1d>;
+ 			clock-names = "sw_sdio";
+ 		};
+ 
+@@ -511,8 +522,8 @@
+ 			reg = <0xf04a257c 0x04>;
+ 			div-table = <0x00 0x01 0x11 0x02 0x12 0x04 0x13 0x08 0x14 0x10>;
+ 			div-shift-width = <0x00 0x05>;
+-			linux,phandle = <0x0e>;
+-			phandle = <0x0e>;
++			linux,phandle = <0x19>;
++			phandle = <0x19>;
+ 		};
+ 
+ 		interrupt-controller@f0403000 {
+@@ -589,8 +600,8 @@
+ 			interrupts = <0x0e>;
+ 			interrupt-parent = <0x0c>;
+ 			interrupt-names = "tmon";
+-			linux,phandle = <0x62>;
+-			phandle = <0x62>;
++			linux,phandle = <0x0e>;
++			phandle = <0x0e>;
+ 		};
+ 
+ 		sram@ffe00000 {
+@@ -627,7 +638,7 @@
+ 			reg-names = "hif_mspi\0bspi\0bspi_raf";
+ 			interrupts = <0x00 0x20 0x00>;
+ 			interrupt-names = "hif_spi";
+-			clocks = <0x1d>;
++			clocks = <0x1e>;
+ 			clock-names = "sw_spi";
+ 		};
+ 
+@@ -647,7 +658,6 @@
+ 			#address-cells = <0x01>;
+ 			#size-cells = <0x01>;
+ 			compatible = "brcm,rf4ce-v0\0brcm,rf4ce";
+-			trust-status = "false";
+ 			reg = <0xf0e00000 0x80a30>;
+ 			interrupt-names = "rf4ce\0rf4ce_aon";
+ 			interrupts-extended = <0x01 0x00 0x83 0x00 0x05 0x06>;
+@@ -664,8 +674,8 @@
+ 				compatible = "fixed-clock";
+ 				#clock-cells = <0x00>;
+ 				clock-frequency = <0x337f980>;
+-				linux,phandle = <0x1e>;
+-				phandle = <0x1e>;
++				linux,phandle = <0x1f>;
++				phandle = <0x1f>;
+ 			};
+ 
+ 			osc_moca@f0410074 {
+@@ -674,8 +684,8 @@
+ 				reg = <0xf0410074 0x04>;
+ 				bit-shift = <0x04>;
+ 				set-bit-to-disable;
+-				linux,phandle = <0x43>;
+-				phandle = <0x43>;
++				linux,phandle = <0x44>;
++				phandle = <0x44>;
+ 			};
+ 
+ 			lc_pwrdn_req@f0480268 {
+@@ -685,18 +695,18 @@
+ 				bit-shift = <0x06>;
+ 				set-bit-to-disable;
+ 				brcm,delay = <0xe6 0x00>;
+-				clocks = <0x1e>;
++				clocks = <0x1f>;
+ 				clock-names = "fixed4";
+-				linux,phandle = <0x2f>;
+-				phandle = <0x2f>;
++				linux,phandle = <0x30>;
++				phandle = <0x30>;
+ 			};
+ 
+ 			fixed5 {
+ 				compatible = "fixed-clock";
+ 				#clock-cells = <0x00>;
+ 				clock-frequency = <0x337f980>;
+-				linux,phandle = <0x1f>;
+-				phandle = <0x1f>;
++				linux,phandle = <0x20>;
++				phandle = <0x20>;
+ 			};
+ 
+ 			moca_pwrdn_req@f0480268 {
+@@ -708,10 +718,10 @@
+ 				brcm,delay = <0x1e 0x00>;
+ 				brcm,inhibit-disable;
+ 				brcm,read-only;
+-				clocks = <0x1f>;
++				clocks = <0x20>;
+ 				clock-names = "fixed5";
+-				linux,phandle = <0x36>;
+-				phandle = <0x36>;
++				linux,phandle = <0x37>;
++				phandle = <0x37>;
+ 			};
+ 
+ 			hif_sdio_card@f0480298 {
+@@ -720,8 +730,8 @@
+ 				reg = <0xf0480298 0x04>;
+ 				bit-shift = <0x02>;
+ 				set-bit-to-disable;
+-				linux,phandle = <0x56>;
+-				phandle = <0x56>;
++				linux,phandle = <0x57>;
++				phandle = <0x57>;
+ 			};
+ 
+ 			hif_sdio_emmc@f0480298 {
+@@ -730,16 +740,16 @@
+ 				reg = <0xf0480298 0x04>;
+ 				bit-shift = <0x03>;
+ 				set-bit-to-disable;
+-				linux,phandle = <0x57>;
+-				phandle = <0x57>;
++				linux,phandle = <0x58>;
++				phandle = <0x58>;
+ 			};
+ 
+ 			fixed0 {
+ 				compatible = "fixed-clock";
+ 				#clock-cells = <0x00>;
+ 				clock-frequency = <0x337f980>;
+-				linux,phandle = <0x20>;
+-				phandle = <0x20>;
++				linux,phandle = <0x21>;
++				phandle = <0x21>;
+ 			};
+ 
+ 			sys0_pll_pdiv@f048001c {
+@@ -749,10 +759,10 @@
+ 				bit-shift = <0x0a>;
+ 				bit-mask = <0x0f>;
+ 				index-starts-at-one;
+-				clocks = <0x20>;
++				clocks = <0x21>;
+ 				clock-names = "fixed0";
+-				linux,phandle = <0x21>;
+-				phandle = <0x21>;
++				linux,phandle = <0x22>;
++				phandle = <0x22>;
+ 			};
+ 
+ 			sys0_pll_ndiv_int {
+@@ -764,10 +774,10 @@
+ 				index-max-mult-at-zero;
+ 				clock-div = <0x01>;
+ 				clock-mult = <0x90>;
+-				clocks = <0x21>;
++				clocks = <0x22>;
+ 				clock-names = "sys0_pll_pdiv";
+-				linux,phandle = <0x22>;
+-				phandle = <0x22>;
++				linux,phandle = <0x23>;
++				phandle = <0x23>;
+ 			};
+ 
+ 			sys0_pll_mdiv_ch0@f0480004 {
+@@ -777,10 +787,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x22>;
++				clocks = <0x23>;
+ 				clock-names = "sys0_pll_ndiv_int";
+-				linux,phandle = <0x23>;
+-				phandle = <0x23>;
++				linux,phandle = <0x24>;
++				phandle = <0x24>;
+ 			};
+ 
+ 			sys0_pll_dis_ch0@f0480004 {
+@@ -789,10 +799,10 @@
+ 				reg = <0xf0480004 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				clocks = <0x23>;
++				clocks = <0x24>;
+ 				clock-names = "sys0_pll_mdiv_ch0";
+-				linux,phandle = <0x24>;
+-				phandle = <0x24>;
++				linux,phandle = <0x25>;
++				phandle = <0x25>;
+ 			};
+ 
+ 			sys0_pll_pdh_ch0@f0480004 {
+@@ -801,10 +811,10 @@
+ 				reg = <0xf0480004 0x04>;
+ 				bit-shift = <0x0a>;
+ 				set-bit-to-disable;
+-				clocks = <0x24>;
++				clocks = <0x25>;
+ 				clock-names = "sys0_pll_dis_ch0";
+-				linux,phandle = <0x25>;
+-				phandle = <0x25>;
++				linux,phandle = <0x26>;
++				phandle = <0x26>;
+ 			};
+ 
+ 			hif_spi@f0480298 {
+@@ -813,10 +823,10 @@
+ 				reg = <0xf0480298 0x04>;
+ 				bit-shift = <0x04>;
+ 				set-bit-to-disable;
+-				clocks = <0x25>;
++				clocks = <0x26>;
+ 				clock-names = "sys0_pll_pdh_ch0";
+-				linux,phandle = <0x1d>;
+-				phandle = <0x1d>;
++				linux,phandle = <0x1e>;
++				phandle = <0x1e>;
+ 			};
+ 
+ 			mocamac_54@f0480368 {
+@@ -824,8 +834,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf0480368 0x04>;
+ 				bit-shift = <0x00>;
+-				linux,phandle = <0x44>;
+-				phandle = <0x44>;
++				linux,phandle = <0x45>;
++				phandle = <0x45>;
+ 			};
+ 
+ 			mocamac_gisb@f0480368 {
+@@ -833,8 +843,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf0480368 0x04>;
+ 				bit-shift = <0x01>;
+-				linux,phandle = <0x45>;
+-				phandle = <0x45>;
++				linux,phandle = <0x46>;
++				phandle = <0x46>;
+ 			};
+ 
+ 			mocamac_scb@f0480368 {
+@@ -842,8 +852,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf0480368 0x04>;
+ 				bit-shift = <0x02>;
+-				linux,phandle = <0x46>;
+-				phandle = <0x46>;
++				linux,phandle = <0x47>;
++				phandle = <0x47>;
+ 			};
+ 
+ 			mocaphy_54@f0480374 {
+@@ -851,8 +861,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf0480374 0x04>;
+ 				bit-shift = <0x00>;
+-				linux,phandle = <0x47>;
+-				phandle = <0x47>;
++				linux,phandle = <0x48>;
++				phandle = <0x48>;
+ 			};
+ 
+ 			pcie_alwayson@f048039c {
+@@ -861,16 +871,16 @@
+ 				reg = <0xf048039c 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				linux,phandle = <0x4d>;
+-				phandle = <0x4d>;
++				linux,phandle = <0x4e>;
++				phandle = <0x4e>;
+ 			};
+ 
+ 			fixed1 {
+ 				compatible = "fixed-clock";
+ 				#clock-cells = <0x00>;
+ 				clock-frequency = <0x337f980>;
+-				linux,phandle = <0x26>;
+-				phandle = <0x26>;
++				linux,phandle = <0x27>;
++				phandle = <0x27>;
+ 			};
+ 
+ 			sys1_pll_pdiv@f0480068 {
+@@ -880,10 +890,10 @@
+ 				bit-shift = <0x0a>;
+ 				bit-mask = <0x0f>;
+ 				index-starts-at-one;
+-				clocks = <0x26>;
++				clocks = <0x27>;
+ 				clock-names = "fixed1";
+-				linux,phandle = <0x27>;
+-				phandle = <0x27>;
++				linux,phandle = <0x28>;
++				phandle = <0x28>;
+ 			};
+ 
+ 			sys1_pll_ndiv_int {
+@@ -895,10 +905,10 @@
+ 				index-max-mult-at-zero;
+ 				clock-div = <0x01>;
+ 				clock-mult = <0xc8>;
+-				clocks = <0x27>;
++				clocks = <0x28>;
+ 				clock-names = "sys1_pll_pdiv";
+-				linux,phandle = <0x28>;
+-				phandle = <0x28>;
++				linux,phandle = <0x29>;
++				phandle = <0x29>;
+ 			};
+ 
+ 			sys1_pll_mdiv_ch4@f0480064 {
+@@ -908,10 +918,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x28>;
++				clocks = <0x29>;
+ 				clock-names = "sys1_pll_ndiv_int";
+-				linux,phandle = <0x29>;
+-				phandle = <0x29>;
++				linux,phandle = <0x2a>;
++				phandle = <0x2a>;
+ 			};
+ 
+ 			sys1_pll_dis_ch4@f0480064 {
+@@ -920,10 +930,10 @@
+ 				reg = <0xf0480064 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				clocks = <0x29>;
++				clocks = <0x2a>;
+ 				clock-names = "sys1_pll_mdiv_ch4";
+-				linux,phandle = <0x2a>;
+-				phandle = <0x2a>;
++				linux,phandle = <0x2b>;
++				phandle = <0x2b>;
+ 			};
+ 
+ 			sys1_pll_pdh_ch4@f0480064 {
+@@ -932,10 +942,10 @@
+ 				reg = <0xf0480064 0x04>;
+ 				bit-shift = <0x0a>;
+ 				set-bit-to-disable;
+-				clocks = <0x2a>;
++				clocks = <0x2b>;
+ 				clock-names = "sys1_pll_dis_ch4";
+-				linux,phandle = <0x2b>;
+-				phandle = <0x2b>;
++				linux,phandle = <0x2c>;
++				phandle = <0x2c>;
+ 			};
+ 
+ 			pcie_duallane_300@f048039c {
+@@ -944,10 +954,10 @@
+ 				reg = <0xf048039c 0x04>;
+ 				bit-shift = <0x01>;
+ 				set-bit-to-disable;
+-				clocks = <0x2b>;
++				clocks = <0x2c>;
+ 				clock-names = "sys1_pll_pdh_ch4";
+-				linux,phandle = <0x4e>;
+-				phandle = <0x4e>;
++				linux,phandle = <0x4f>;
++				phandle = <0x4f>;
+ 			};
+ 
+ 			pcie_rcbypref_100@f048039c {
+@@ -956,8 +966,8 @@
+ 				reg = <0xf048039c 0x04>;
+ 				bit-shift = <0x02>;
+ 				set-bit-to-disable;
+-				linux,phandle = <0x4f>;
+-				phandle = <0x4f>;
++				linux,phandle = <0x50>;
++				phandle = <0x50>;
+ 			};
+ 
+ 			pcie_108@f04803a4 {
+@@ -965,8 +975,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf04803a4 0x04>;
+ 				bit-shift = <0x00>;
+-				linux,phandle = <0x50>;
+-				phandle = <0x50>;
++				linux,phandle = <0x51>;
++				phandle = <0x51>;
+ 			};
+ 
+ 			pcie_54@f04803a4 {
+@@ -974,8 +984,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf04803a4 0x04>;
+ 				bit-shift = <0x01>;
+-				linux,phandle = <0x51>;
+-				phandle = <0x51>;
++				linux,phandle = <0x52>;
++				phandle = <0x52>;
+ 			};
+ 
+ 			pcie_gisb@f04803a4 {
+@@ -983,8 +993,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf04803a4 0x04>;
+ 				bit-shift = <0x02>;
+-				linux,phandle = <0x52>;
+-				phandle = <0x52>;
++				linux,phandle = <0x53>;
++				phandle = <0x53>;
+ 			};
+ 
+ 			pcie_scb@f04803a4 {
+@@ -992,8 +1002,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf04803a4 0x04>;
+ 				bit-shift = <0x03>;
+-				linux,phandle = <0x53>;
+-				phandle = <0x53>;
++				linux,phandle = <0x54>;
++				phandle = <0x54>;
+ 			};
+ 
+ 			usb0_27_mdio@f0480448 {
+@@ -1002,8 +1012,8 @@
+ 				reg = <0xf0480448 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				linux,phandle = <0x58>;
+-				phandle = <0x58>;
++				linux,phandle = <0x59>;
++				phandle = <0x59>;
+ 			};
+ 
+ 			usb0_freerun@f0480448 {
+@@ -1012,8 +1022,8 @@
+ 				reg = <0xf0480448 0x04>;
+ 				bit-shift = <0x01>;
+ 				set-bit-to-disable;
+-				linux,phandle = <0x59>;
+-				phandle = <0x59>;
++				linux,phandle = <0x5a>;
++				phandle = <0x5a>;
+ 			};
+ 
+ 			usb0_54@f0480450 {
+@@ -1021,8 +1031,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf0480450 0x04>;
+ 				bit-shift = <0x00>;
+-				linux,phandle = <0x5a>;
+-				phandle = <0x5a>;
++				linux,phandle = <0x5b>;
++				phandle = <0x5b>;
+ 			};
+ 
+ 			usb0_gisb@f0480450 {
+@@ -1030,8 +1040,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf0480450 0x04>;
+ 				bit-shift = <0x01>;
+-				linux,phandle = <0x5b>;
+-				phandle = <0x5b>;
++				linux,phandle = <0x5c>;
++				phandle = <0x5c>;
+ 			};
+ 
+ 			usb0_scb@f0480450 {
+@@ -1039,8 +1049,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf0480450 0x04>;
+ 				bit-shift = <0x02>;
+-				linux,phandle = <0x5c>;
+-				phandle = <0x5c>;
++				linux,phandle = <0x5d>;
++				phandle = <0x5d>;
+ 			};
+ 
+ 			usb0_108_ahb@f0480454 {
+@@ -1048,8 +1058,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf0480454 0x04>;
+ 				bit-shift = <0x00>;
+-				linux,phandle = <0x5d>;
+-				phandle = <0x5d>;
++				linux,phandle = <0x5e>;
++				phandle = <0x5e>;
+ 			};
+ 
+ 			usb0_108_axi@f048045c {
+@@ -1057,8 +1067,8 @@
+ 				#clock-cells = <0x00>;
+ 				reg = <0xf048045c 0x04>;
+ 				bit-shift = <0x00>;
+-				linux,phandle = <0x5e>;
+-				phandle = <0x5e>;
++				linux,phandle = <0x5f>;
++				phandle = <0x5f>;
+ 			};
+ 
+ 			sys0_pll_mdiv_ch2@f048000c {
+@@ -1068,10 +1078,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x22>;
++				clocks = <0x23>;
+ 				clock-names = "sys0_pll_ndiv_int";
+-				linux,phandle = <0x54>;
+-				phandle = <0x54>;
++				linux,phandle = <0x55>;
++				phandle = <0x55>;
+ 			};
+ 
+ 			sys0_pll_mdiv_ch3@f0480010 {
+@@ -1081,10 +1091,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x22>;
++				clocks = <0x23>;
+ 				clock-names = "sys0_pll_ndiv_int";
+-				linux,phandle = <0x48>;
+-				phandle = <0x48>;
++				linux,phandle = <0x49>;
++				phandle = <0x49>;
+ 			};
+ 
+ 			sys0_pll_mdiv_ch4@f0480014 {
+@@ -1094,10 +1104,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x22>;
++				clocks = <0x23>;
+ 				clock-names = "sys0_pll_ndiv_int";
+-				linux,phandle = <0x40>;
+-				phandle = <0x40>;
++				linux,phandle = <0x41>;
++				phandle = <0x41>;
+ 			};
+ 
+ 			sys1_pll_mdiv_ch0@f0480054 {
+@@ -1107,10 +1117,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x28>;
++				clocks = <0x29>;
+ 				clock-names = "sys1_pll_ndiv_int";
+-				linux,phandle = <0x55>;
+-				phandle = <0x55>;
++				linux,phandle = <0x56>;
++				phandle = <0x56>;
+ 			};
+ 
+ 			sys1_pll_mdiv_ch3@f0480060 {
+@@ -1120,18 +1130,18 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x28>;
++				clocks = <0x29>;
+ 				clock-names = "sys1_pll_ndiv_int";
+-				linux,phandle = <0x4c>;
+-				phandle = <0x4c>;
++				linux,phandle = <0x4d>;
++				phandle = <0x4d>;
+ 			};
+ 
+ 			fixed3 {
+ 				compatible = "fixed-clock";
+ 				#clock-cells = <0x00>;
+ 				clock-frequency = <0x337f980>;
+-				linux,phandle = <0x2c>;
+-				phandle = <0x2c>;
++				linux,phandle = <0x2d>;
++				phandle = <0x2d>;
+ 			};
+ 
+ 			cpu_pdiv@f04800f0 {
+@@ -1141,10 +1151,10 @@
+ 				bit-shift = <0x0a>;
+ 				bit-mask = <0x0f>;
+ 				index-starts-at-one;
+-				clocks = <0x2c>;
++				clocks = <0x2d>;
+ 				clock-names = "fixed3";
+-				linux,phandle = <0x2d>;
+-				phandle = <0x2d>;
++				linux,phandle = <0x2e>;
++				phandle = <0x2e>;
+ 			};
+ 
+ 			cpu_ndiv_int {
+@@ -1156,10 +1166,10 @@
+ 				index-max-mult-at-zero;
+ 				clock-div = <0x01>;
+ 				clock-mult = <0xa7>;
+-				clocks = <0x2d>;
++				clocks = <0x2e>;
+ 				clock-names = "cpu_pdiv";
+-				linux,phandle = <0x2e>;
+-				phandle = <0x2e>;
++				linux,phandle = <0x2f>;
++				phandle = <0x2f>;
+ 			};
+ 
+ 			cpu_mdiv_ch0@f04800e8 {
+@@ -1169,10 +1179,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x2e>;
++				clocks = <0x2f>;
+ 				clock-names = "cpu_ndiv_int";
+-				linux,phandle = <0x41>;
+-				phandle = <0x41>;
++				linux,phandle = <0x42>;
++				phandle = <0x42>;
+ 			};
+ 
+ 			lc_pdiv@f0480138 {
+@@ -1182,10 +1192,10 @@
+ 				bit-shift = <0x0a>;
+ 				bit-mask = <0x0f>;
+ 				index-starts-at-one;
+-				clocks = <0x2f>;
++				clocks = <0x30>;
+ 				clock-names = "lc_pwrdn_req";
+-				linux,phandle = <0x30>;
+-				phandle = <0x30>;
++				linux,phandle = <0x31>;
++				phandle = <0x31>;
+ 			};
+ 
+ 			lc_ndiv_int {
+@@ -1197,10 +1207,10 @@
+ 				index-max-mult-at-zero;
+ 				clock-div = <0x01>;
+ 				clock-mult = <0x64>;
+-				clocks = <0x30>;
++				clocks = <0x31>;
+ 				clock-names = "lc_pdiv";
+-				linux,phandle = <0x31>;
+-				phandle = <0x31>;
++				linux,phandle = <0x32>;
++				phandle = <0x32>;
+ 			};
+ 
+ 			lc_mdiv_ch1@f0480124 {
+@@ -1210,10 +1220,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x31>;
++				clocks = <0x32>;
+ 				clock-names = "lc_ndiv_int";
+-				linux,phandle = <0x32>;
+-				phandle = <0x32>;
++				linux,phandle = <0x33>;
++				phandle = <0x33>;
+ 			};
+ 
+ 			lc_dis_ch1@f0480124 {
+@@ -1222,10 +1232,10 @@
+ 				reg = <0xf0480124 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				clocks = <0x32>;
++				clocks = <0x33>;
+ 				clock-names = "lc_mdiv_ch1";
+-				linux,phandle = <0x33>;
+-				phandle = <0x33>;
++				linux,phandle = <0x34>;
++				phandle = <0x34>;
+ 			};
+ 
+ 			lc_pdh_ch1@f0480124 {
+@@ -1234,10 +1244,10 @@
+ 				reg = <0xf0480124 0x04>;
+ 				bit-shift = <0x0a>;
+ 				set-bit-to-disable;
+-				clocks = <0x33>;
++				clocks = <0x34>;
+ 				clock-names = "lc_dis_ch1";
+-				linux,phandle = <0x5f>;
+-				phandle = <0x5f>;
++				linux,phandle = <0x60>;
++				phandle = <0x60>;
+ 			};
+ 
+ 			lc_mdiv_ch2@f0480128 {
+@@ -1247,10 +1257,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x31>;
++				clocks = <0x32>;
+ 				clock-names = "lc_ndiv_int";
+-				linux,phandle = <0x34>;
+-				phandle = <0x34>;
++				linux,phandle = <0x35>;
++				phandle = <0x35>;
+ 			};
+ 
+ 			lc_dis_ch2@f0480128 {
+@@ -1259,10 +1269,10 @@
+ 				reg = <0xf0480128 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				clocks = <0x34>;
++				clocks = <0x35>;
+ 				clock-names = "lc_mdiv_ch2";
+-				linux,phandle = <0x35>;
+-				phandle = <0x35>;
++				linux,phandle = <0x36>;
++				phandle = <0x36>;
+ 			};
+ 
+ 			lc_pdh_ch2@f0480128 {
+@@ -1271,10 +1281,10 @@
+ 				reg = <0xf0480128 0x04>;
+ 				bit-shift = <0x0a>;
+ 				set-bit-to-disable;
+-				clocks = <0x35>;
++				clocks = <0x36>;
+ 				clock-names = "lc_dis_ch2";
+-				linux,phandle = <0x60>;
+-				phandle = <0x60>;
++				linux,phandle = <0x61>;
++				phandle = <0x61>;
+ 			};
+ 
+ 			moca_pdiv@f048017c {
+@@ -1284,10 +1294,10 @@
+ 				bit-shift = <0x0a>;
+ 				bit-mask = <0x0f>;
+ 				index-starts-at-one;
+-				clocks = <0x36>;
++				clocks = <0x37>;
+ 				clock-names = "moca_pwrdn_req";
+-				linux,phandle = <0x37>;
+-				phandle = <0x37>;
++				linux,phandle = <0x38>;
++				phandle = <0x38>;
+ 			};
+ 
+ 			moca_ndiv_int {
+@@ -1299,10 +1309,10 @@
+ 				index-max-mult-at-zero;
+ 				clock-div = <0x01>;
+ 				clock-mult = <0xc8>;
+-				clocks = <0x37>;
++				clocks = <0x38>;
+ 				clock-names = "moca_pdiv";
+-				linux,phandle = <0x38>;
+-				phandle = <0x38>;
++				linux,phandle = <0x39>;
++				phandle = <0x39>;
+ 			};
+ 
+ 			moca_mdiv_ch0@f048016c {
+@@ -1312,10 +1322,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x38>;
++				clocks = <0x39>;
+ 				clock-names = "moca_ndiv_int";
+-				linux,phandle = <0x39>;
+-				phandle = <0x39>;
++				linux,phandle = <0x3a>;
++				phandle = <0x3a>;
+ 			};
+ 
+ 			moca_dis_ch0@f048016c {
+@@ -1324,10 +1334,10 @@
+ 				reg = <0xf048016c 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				clocks = <0x39>;
++				clocks = <0x3a>;
+ 				clock-names = "moca_mdiv_ch0";
+-				linux,phandle = <0x3a>;
+-				phandle = <0x3a>;
++				linux,phandle = <0x3b>;
++				phandle = <0x3b>;
+ 			};
+ 
+ 			moca_pdh_ch0@f048016c {
+@@ -1336,10 +1346,10 @@
+ 				reg = <0xf048016c 0x04>;
+ 				bit-shift = <0x0a>;
+ 				set-bit-to-disable;
+-				clocks = <0x3a>;
++				clocks = <0x3b>;
+ 				clock-names = "moca_dis_ch0";
+-				linux,phandle = <0x49>;
+-				phandle = <0x49>;
++				linux,phandle = <0x4a>;
++				phandle = <0x4a>;
+ 			};
+ 
+ 			moca_mdiv_ch1@f0480170 {
+@@ -1349,10 +1359,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x38>;
++				clocks = <0x39>;
+ 				clock-names = "moca_ndiv_int";
+-				linux,phandle = <0x3b>;
+-				phandle = <0x3b>;
++				linux,phandle = <0x3c>;
++				phandle = <0x3c>;
+ 			};
+ 
+ 			moca_dis_ch1@f0480170 {
+@@ -1361,10 +1371,10 @@
+ 				reg = <0xf0480170 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				clocks = <0x3b>;
++				clocks = <0x3c>;
+ 				clock-names = "moca_mdiv_ch1";
+-				linux,phandle = <0x3c>;
+-				phandle = <0x3c>;
++				linux,phandle = <0x3d>;
++				phandle = <0x3d>;
+ 			};
+ 
+ 			moca_pdh_ch1@f0480170 {
+@@ -1373,10 +1383,10 @@
+ 				reg = <0xf0480170 0x04>;
+ 				bit-shift = <0x0a>;
+ 				set-bit-to-disable;
+-				clocks = <0x3c>;
++				clocks = <0x3d>;
+ 				clock-names = "moca_dis_ch1";
+-				linux,phandle = <0x4a>;
+-				phandle = <0x4a>;
++				linux,phandle = <0x4b>;
++				phandle = <0x4b>;
+ 			};
+ 
+ 			moca_mdiv_ch2@f0480174 {
+@@ -1386,10 +1396,10 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x38>;
++				clocks = <0x39>;
+ 				clock-names = "moca_ndiv_int";
+-				linux,phandle = <0x3d>;
+-				phandle = <0x3d>;
++				linux,phandle = <0x3e>;
++				phandle = <0x3e>;
+ 			};
+ 
+ 			moca_dis_ch2@f0480174 {
+@@ -1398,10 +1408,10 @@
+ 				reg = <0xf0480174 0x04>;
+ 				bit-shift = <0x00>;
+ 				set-bit-to-disable;
+-				clocks = <0x3d>;
++				clocks = <0x3e>;
+ 				clock-names = "moca_mdiv_ch2";
+-				linux,phandle = <0x3e>;
+-				phandle = <0x3e>;
++				linux,phandle = <0x3f>;
++				phandle = <0x3f>;
+ 			};
+ 
+ 			moca_pdh_ch2@f0480174 {
+@@ -1410,18 +1420,18 @@
+ 				reg = <0xf0480174 0x04>;
+ 				bit-shift = <0x0a>;
+ 				set-bit-to-disable;
+-				clocks = <0x3e>;
++				clocks = <0x3f>;
+ 				clock-names = "moca_dis_ch2";
+-				linux,phandle = <0x4b>;
+-				phandle = <0x4b>;
++				linux,phandle = <0x4c>;
++				phandle = <0x4c>;
+ 			};
+ 
+ 			fixed_syn0 {
+ 				compatible = "fixed-clock";
+ 				#clock-cells = <0x00>;
+ 				clock-frequency = <0xc11e7a00>;
+-				linux,phandle = <0x3f>;
+-				phandle = <0x3f>;
++				linux,phandle = <0x40>;
++				phandle = <0x40>;
+ 			};
+ 
+ 			rdp_mdiv_ch3@f04801b8 {
+@@ -1431,75 +1441,67 @@
+ 				bit-shift = <0x01>;
+ 				bit-mask = <0xff>;
+ 				index-starts-at-one;
+-				clocks = <0x3f>;
++				clocks = <0x40>;
+ 				clock-names = "fixed_syn0";
+-				linux,phandle = <0x42>;
+-				phandle = <0x42>;
+-			};
+-
+-			upg_fixed {
+-				#clock-cells = <0x00>;
+-				compatible = "fixed-clock";
+-				clock-frequency = <0x19bfcc0>;
+-				linux,phandle = <0x61>;
+-				phandle = <0x61>;
++				linux,phandle = <0x43>;
++				phandle = <0x43>;
+ 			};
+ 
+ 			sw_cpu {
+ 				compatible = "brcm,brcmstb-sw-clk";
+ 				#clock-cells = <0x00>;
+-				clocks = <0x40 0x41 0x42>;
++				clocks = <0x41 0x42 0x43>;
+ 				clock-names = "sys0_pll_mdiv_ch4\0cpu_mdiv_ch0\0rdp_mdiv_ch3";
+ 			};
+ 
+ 			sw_moca {
+ 				compatible = "brcm,brcmstb-sw-clk";
+ 				#clock-cells = <0x00>;
+-				clocks = <0x43 0x44 0x45 0x46 0x47 0x48 0x40 0x49 0x4a 0x4b>;
++				clocks = <0x44 0x45 0x46 0x47 0x48 0x49 0x41 0x4a 0x4b 0x4c>;
+ 				clock-names = "osc_moca\0mocamac_54\0mocamac_gisb\0mocamac_scb\0mocaphy_54\0sys0_pll_mdiv_ch3\0sys0_pll_mdiv_ch4\0moca_pdh_ch0\0moca_pdh_ch1\0moca_pdh_ch2";
+ 			};
+ 
+ 			sw_mpi {
+ 				compatible = "brcm,brcmstb-sw-clk";
+ 				#clock-cells = <0x00>;
+-				clocks = <0x40 0x4c>;
++				clocks = <0x41 0x4d>;
+ 				clock-names = "sys0_pll_mdiv_ch4\0sys1_pll_mdiv_ch3";
+ 			};
+ 
+ 			sw_pcie0 {
+ 				compatible = "brcm,brcmstb-sw-clk";
+ 				#clock-cells = <0x00>;
+-				clocks = <0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x48 0x40 0x55>;
++				clocks = <0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x49 0x41 0x56>;
+ 				clock-names = "pcie_alwayson\0pcie_duallane_300\0pcie_rcbypref_100\0pcie_108\0pcie_54\0pcie_gisb\0pcie_scb\0sys0_pll_mdiv_ch2\0sys0_pll_mdiv_ch3\0sys0_pll_mdiv_ch4\0sys1_pll_mdiv_ch0";
+-				linux,phandle = <0x19>;
+-				phandle = <0x19>;
++				linux,phandle = <0x1a>;
++				phandle = <0x1a>;
+ 			};
+ 
+ 			sw_sdio {
+ 				compatible = "brcm,brcmstb-sw-clk";
+ 				#clock-cells = <0x00>;
+-				clocks = <0x56 0x57 0x55>;
++				clocks = <0x57 0x58 0x56>;
+ 				clock-names = "hif_sdio_card\0hif_sdio_emmc\0sys1_pll_mdiv_ch0";
+-				linux,phandle = <0x1c>;
+-				phandle = <0x1c>;
++				linux,phandle = <0x1d>;
++				phandle = <0x1d>;
+ 			};
+ 
+ 			sw_usb20 {
+ 				compatible = "brcm,brcmstb-sw-clk";
+ 				#clock-cells = <0x00>;
+-				clocks = <0x58 0x59 0x5a 0x5b 0x5c 0x5d 0x5e 0x54 0x48 0x40 0x5f>;
++				clocks = <0x59 0x5a 0x5b 0x5c 0x5d 0x5e 0x5f 0x55 0x49 0x41 0x60>;
+ 				clock-names = "usb0_27_mdio\0usb0_freerun\0usb0_54\0usb0_gisb\0usb0_scb\0usb0_108_ahb\0usb0_108_axi\0sys0_pll_mdiv_ch2\0sys0_pll_mdiv_ch3\0sys0_pll_mdiv_ch4\0lc_pdh_ch1";
+-				linux,phandle = <0x1a>;
+-				phandle = <0x1a>;
++				linux,phandle = <0x1b>;
++				phandle = <0x1b>;
+ 			};
+ 
+ 			sw_usb30 {
+ 				compatible = "brcm,brcmstb-sw-clk";
+ 				#clock-cells = <0x00>;
+-				clocks = <0x58 0x59 0x5a 0x5b 0x5c 0x5d 0x5e 0x54 0x48 0x40 0x60>;
++				clocks = <0x59 0x5a 0x5b 0x5c 0x5d 0x5e 0x5f 0x55 0x49 0x41 0x61>;
+ 				clock-names = "usb0_27_mdio\0usb0_freerun\0usb0_54\0usb0_gisb\0usb0_scb\0usb0_108_ahb\0usb0_108_axi\0sys0_pll_mdiv_ch2\0sys0_pll_mdiv_ch3\0sys0_pll_mdiv_ch4\0lc_pdh_ch2";
+-				linux,phandle = <0x1b>;
+-				phandle = <0x1b>;
++				linux,phandle = <0x1c>;
++				phandle = <0x1c>;
+ 			};
+ 		};
+ 
+@@ -1663,14 +1665,14 @@
+ 
+ 		pwm@f0408000 {
+ 			#pwm-cells = <0x02>;
+-			clocks = <0x61>;
++			clocks = <0x62>;
+ 			compatible = "brcm,bcm7038-pwm\0brcm,brcmstb-pwm";
+ 			reg = <0xf0408000 0x28>;
+ 		};
+ 
+ 		pwm@f0409000 {
+ 			#pwm-cells = <0x02>;
+-			clocks = <0x61>;
++			clocks = <0x62>;
+ 			compatible = "brcm,bcm7038-pwm\0brcm,brcmstb-pwm";
+ 			reg = <0xf0409000 0x28>;
+ 		};
+@@ -1678,17 +1680,29 @@
+ 
+ 	thermal-zones {
+ 
+-		soc-thermal {
++		cpu-thermal {
+ 			polling-delay = <0x00>;
+ 			polling-delay-passive = <0x00>;
+-			thermal-sensors = <0x62>;
++			thermal-sensors = <0x0e>;
+ 
+ 			trips {
+ 
+-				soc-alert0 {
++				cpu-alert0 {
++					temperature = <0x17318>;
++					hysteresis = <0x2710>;
++					type = "passive";
++				};
++
++				cpu-alert1 {
++					temperature = <0x1adb0>;
++					hysteresis = <0x2710>;
++					type = "passive";
++				};
++
++				cpu-alert2 {
+ 					temperature = <0x1e848>;
+-					hysteresis = <0x3e8>;
+-					type = "critical";
++					hysteresis = <0x2710>;
++					type = "passive";
+ 				};
+ 			};
+ 		};
+@@ -1698,7 +1712,7 @@
+ 		syscon-refs = <0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18>;
+ 	};
+ 
+-	ba {
++	boot-assist {
+ 		compatible = "brcm,brcm-ba";
+ 		version = <0x20002>;
+ 		interrupts = <0x00 0x17 0x04 0x00 0x18 0x04>;
+@@ -1712,13 +1726,12 @@
+ 		leap = <0x7f00000 0x100000>;
+ 		arm_boot_rom = <0x9430000 0x10000>;
+ 		cm_atw = <0x00 0x4000000 0x4000000 0x00 0x4807fffc 0x00 0x00 0x00>;
+-		cm_dsp_atw = <0x01 0x8000000 0x400000 0x7c00000 0x4804fffc 0x00 0x00 0x00>;
++		cm_dsp_atw = <0x01 0x8000000 0x200000 0x7e00000 0x4804fffc 0x00 0x00 0x00>;
+ 		cm_boot_atw = <0x02 0x9400000 0x10000 0x1fc00000 0x40000 0x00 0x00 0x00>;
+ 		leds = <0xd3c009c0 0x08>;
+-		rg-batt-mode = "off";
+ 	};
+ 
+-	mbox {
++	brcm-mbox {
+ 		compatible = "brcm,brcm-mbox";
+ 		reg = <0x00 0xd3800080 0x00 0x80 0x00 0xd3800000 0x00 0x80>;
+ 		interrupts = <0x00 0x81 0x04>;
+@@ -1729,17 +1742,13 @@
+ 
+ 	fpm@0xd3a00000 {
+ 		compatible = "brcm,fpm";
+-		reg = <0x00 0xac00000 0x00 0x1000000 0x00 0xd3a00000 0x00 0x30133 0x00 0xcc00000 0x00 0x1000000>;
++		reg = <0x00 0xbc00000 0x00 0x2000000 0x00 0xd3a00000 0x00 0x30133>;
+ 		interrupts = <0x00 0x7f 0x00>;
+-		init;
++		init = <0x01>;
+ 		pool-alloc-weight = <0x01 0x01>;
+ 		pool-free-weight = <0x01 0x01>;
+ 		track-tokens = <0x01>;
+ 		track-on-err = <0x00>;
+-		chunk-size = <0x100>;
+-		net-buf-head-pad = <0x10>;
+-		net-buf-tail-pad = <0x00>;
+-		lwm-watchdog-timeout = <0x493e0>;
+ 	};
+ 
+ 	dqm@d3800000 {
+@@ -1770,8 +1779,8 @@
+ 		q-count = <0x60>;
+ 		cfg-qsm = <0x01>;
+ 		qsm-size = <0x2fc0>;
+-		#qsm-alloc-str-cells = <0x08>;
+-		qsm-allocation-str = "2\04\08\01\02\01\00\0RPC RG-->CM\03\04\08\01\02\01\00\0RPC RG<--CM\06\04\08\01\02\01\00\0RPC STB-->CM\07\04\08\01\02\01\00\0RPC STB<--CM\08\04\08\01\02\01\00\0RPC DECT-->CM\09\04\08\01\02\01\00\0RPC DECT<--CM\014\02\016\01\04\01\00\0Private Network RG-->CM\015\02\064\01\04\01\00\0Private Network RG<--CM\020\04\08\01\02\01\00\0RPC SVM-->CM\021\04\08\01\02\01\00\0RPC SVM<--CM\032\04\064\01\016\01\00\0RG DS Forward (RG-->Runner)\034\04\064\01\016\01\00\0RG DS Egress (RG-->Runner)\035\04\064\01\016\01\00\0RG US Egress (RG-->Runner)\047\02\04000\01\0512\01\00\0SKB Prealloc (RG-->Runner)\048\04\04000\01\064\064\01000\0RG Exception 0 (Runner-->RG)\049\04\0256\01\064\01\00\0RG Exception 1 (Runner-->RG)\050\04\0256\01\064\01\00\0RG Exception 2 (Runner-->RG)\051\04\0256\01\064\01\00\0RG Exception 3 (Runner-->RG)\052\04\0256\01\064\01\00\0RG Exception 4 (Runner-->RG)\053\04\0256\01\064\01\00\0RG Exception 5 (Runner-->RG)\054\04\0256\01\064\01\00\0RG Exception 6 (Runner-->RG)\055\01\04000\01\016\01000\00\0SKB Recycle (Runner-->RG)";
++		#qsm-alloc-cells = <0x07>;
++		qsm-allocation = <0x02 0x04 0x08 0x01 0x02 0x01 0x00 0x03 0x04 0x08 0x01 0x02 0x01 0x00 0x08 0x04 0x08 0x01 0x02 0x01 0x00 0x09 0x04 0x08 0x01 0x02 0x01 0x00 0x0a 0x02 0x10 0x01 0x04 0x01 0x00 0x0b 0x02 0x10 0x01 0x04 0x01 0x00 0x0e 0x02 0x10 0x01 0x04 0x01 0x00 0x0f 0x02 0x40 0x01 0x04 0x01 0x00 0x14 0x04 0x08 0x01 0x02 0x01 0x00 0x15 0x04 0x08 0x01 0x02 0x01 0x00 0x20 0x04 0x40 0x01 0x10 0x01 0x00 0x22 0x04 0x40 0x01 0x10 0x01 0x00 0x23 0x04 0x40 0x01 0x10 0x01 0x00 0x24 0x02 0x40 0x01 0x10 0x01 0x00 0x25 0x02 0x40 0x01 0x10 0x01 0x00 0x26 0x02 0x40 0x01 0x10 0x01 0x00 0x27 0x02 0x40 0x01 0x10 0x01 0x00 0x2c 0x02 0x40 0x01 0x10 0x01 0x00 0x2d 0x02 0x40 0x01 0x10 0x01 0x00 0x2e 0x02 0x40 0x01 0x10 0x01 0x00 0x2f 0x02 0xfa0 0x01 0x200 0x01 0x00 0x30 0x04 0xfa0 0x01 0x40 0x40 0x3e8 0x31 0x04 0x100 0x01 0x40 0x01 0x00 0x32 0x04 0x100 0x01 0x40 0x01 0x00 0x33 0x04 0x100 0x01 0x40 0x01 0x00 0x34 0x04 0x100 0x01 0x40 0x01 0x00 0x35 0x04 0x100 0x01 0x40 0x01 0x00 0x36 0x04 0x100 0x01 0x40 0x01 0x00 0x37 0x01 0xfa0 0x01 0x10 0x3e8 0x00>;
+ 	};
+ 
+ 	rpcrgcm {
+@@ -1797,7 +1806,7 @@
+ 		#tx-q-cells = <0x04>;
+ 		tx-q = "cpucomm\035\00\0upstream\0cpucomm\034\00\0downstream";
+ 		#rx-q-cells = <0x03>;
+-		rx-q = "cpucomm\049\00\0cpucomm\048\01";
++		rx-q = "cpucomm\048\00\0cpucomm\049\01";
+ 		type = "fap-exception";
+ 		q-msg-fmt = "runner-fpm";
+ 		linux,phandle = <0x65>;
+@@ -1873,7 +1882,6 @@
+ 		if-sub-id = <0x00>;
+ 		demux = "subid";
+ 		link-type = "switch";
+-		connection_type = "internal";
+ 		brcm-tag;
+ 	};
+ 
+@@ -1885,7 +1893,6 @@
+ 		if-sub-id = <0x01>;
+ 		demux = "subid";
+ 		link-type = "switch";
+-		connection-type = "internal";
+ 		brcm-tag;
+ 	};
+ 
+@@ -1897,9 +1904,7 @@
+ 		if-sub-id = <0x02>;
+ 		demux = "subid";
+ 		link-type = "switch";
+-		connection-type = "internal";
+ 		brcm-tag;
+-		status = "disabled";
+ 	};
+ 
+ 	ethernet3 {
+@@ -1911,7 +1916,6 @@
+ 		demux = "subid";
+ 		link-type = "switch";
+ 		brcm-tag;
+-		status = "disabled";
+ 	};
+ 
+ 	cm0 {
+@@ -1938,47 +1942,51 @@
+ 
+ 	mdio@d040062c {
+ 		compatible = "brcm,unimac-mdio";
+-		dev-name = "UniMAC MII bus";
+ 		reg = <0x00 0xd040062c 0x00 0x08>;
+-		reg-names = "unimac_mdio";
++		reg-names = "mdio";
+ 		#size-cells = <0x01>;
+ 		#address-cells = <0x00>;
+ 	};
+ 
+-	mdio@d4e403c0 {
+-		compatible = "brcm,unimac-mdio";
+-		dev-name = "Switch MDIO bus";
+-		reg = <0x00 0xd4e403c0 0x00 0x08>;
+-		reg-names = "switch_mdio";
++	ethsw@d4e00000 {
++		compatible = "brcm,ethsw";
++		reg = <0x00 0xd4e00000 0x00 0x42000 0x00 0xd3c009c0 0x00 0x2c>;
++		interrupts = <0x00 0x71 0x00 0x00 0x72 0x00>;
++		dev-name = "ethsw";
++		imp-port = <0x05 0x7d0 0x07 0x7d0 0x08 0x7d0>;
++		eee-support = <0x01>;
++		high-speed-imp = <0x01>;
++		phy-handles = <0x66 0x67 0x68 0x69>;
+ 		#size-cells = <0x01>;
+ 		#address-cells = <0x00>;
++		led-map = <0x0f>;
+ 
+-		phy8 {
+-			compatible = "brcm,bcm3390-qgphy";
++		phy@28 {
++			compatible = "ethernet-phy-ieee802.3-c22";
+ 			reg = <0x08>;
+ 			phy-mode = "rgmii";
+ 			linux,phandle = <0x66>;
+ 			phandle = <0x66>;
+ 		};
+ 
+-		phy@9 {
+-			compatible = "brcm,bcm3390-qgphy";
++		phy@29 {
++			compatible = "ethernet-phy-ieee802.3-c22";
+ 			reg = <0x09>;
+ 			phy-mode = "rgmii";
+ 			linux,phandle = <0x67>;
+ 			phandle = <0x67>;
+ 		};
+ 
+-		phy@10 {
+-			compatible = "brcm,bcm3390-qgphy";
++		phy@30 {
++			compatible = "ethernet-phy-ieee802.3-c22";
+ 			reg = <0x0a>;
+ 			phy-mode = "rgmii";
+ 			linux,phandle = <0x68>;
+ 			phandle = <0x68>;
+ 		};
+ 
+-		phy@11 {
+-			compatible = "brcm,bcm3390-qgphy";
++		phy@31 {
++			compatible = "ethernet-phy-ieee802.3-c22";
+ 			reg = <0x0b>;
+ 			phy-mode = "rgmii";
+ 			linux,phandle = <0x69>;
+@@ -1986,29 +1994,21 @@
+ 		};
+ 	};
+ 
+-	ethsw@d4e00000 {
+-		compatible = "brcm,ethsw";
+-		reg = <0x00 0xd4e00000 0x00 0x42000 0x00 0xd3c009c0 0x00 0x2c>;
+-		interrupts = <0x00 0x71 0x00 0x00 0x72 0x00>;
+-		dev-name = "ethsw";
+-		imp-port = <0x05 0x7d0 0x07 0x7d0 0x08 0x7d0>;
+-		eee-support = <0x01>;
+-		high-speed-imp = <0x01>;
+-		phy-handles = <0x66 0x67 0x68 0x69>;
+-		subid-port-offset = <0x00>;
+-		#size-cells = <0x01>;
+-		#address-cells = <0x00>;
+-		led-map = <0x0f>;
+-		vlan-default-mode = <0x00>;
+-	};
+-
+ 	runner@0xd5000000 {
+ 		compatible = "brcm,rdpa_cm";
+-		reg = <0x00 0xd5000000 0x00 0xfc460 0x00 0x9c00000 0x00 0x1000000 0x00 0xbc00000 0x00 0x1000000 0x00 0x9500000 0x00 0x700000>;
++		reg = <0x00 0xd5000000 0x00 0xfc460 0x00 0x9c00000 0x00 0x2000000 0x00 0x00 0x00 0x00 0x00 0x9500000 0x00 0x700000>;
+ 		freq = <0x320>;
+ 		lag-ports = <0x00 0x01 0x02>;
+ 	};
+ 
++	upg_fixed {
++		#clock-cells = <0x00>;
++		compatible = "fixed-clock";
++		clock-frequency = <0x19bfcc0>;
++		linux,phandle = <0x62>;
++		phandle = <0x62>;
++	};
++
+ 	pinmux@f0404100 {
+ 		compatible = "pinctrl-single";
+ 		reg = <0x00 0xf04040a4 0x00 0xc4>;
+@@ -2082,15 +2082,4 @@
+ 			reg = <0x24>;
+ 		};
+ 	};
+-
+-	ubus-capture {
+-		compatible = "brcm,ubus-capture";
+-		reg = <0x00 0xd3e00000 0x00 0x1000 0x00 0xd7e00000 0x00 0x1000>;
+-		segments = <0x06 0x02>;
+-		address-range = <0xd3e00000 0xd3e00fff>;
+-		address-exclude = <0x01>;
+-		pid-range = <0x5f 0x60>;
+-		pid-exclude = <0x01>;
+-		enabled-at-boot = "no";
+-	};
+ };

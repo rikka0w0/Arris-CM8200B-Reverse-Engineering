@@ -1,0 +1,24 @@
+This fwex tool extracts the payloads from Broadcom firmware update files.
+
+The first payload image is usually the ROMD CFE/Kernel/root file-system combination.
+If the payload is LZW (typically the second payload image is the XML router configuration) it will also decompress it.
+
+The LZW (de)compressor code originally came from the FFMPEG project and was modified by Broadcom for
+(de)compressing device configuration files.
+
+In the Zyxel/MitraStar/Broadcom source-code packages provided by those companies there is a tool
+that runs on the host for LZW compression only:
+
+hostTools/CompressConfig
+
+That tool includes the FFMPEG library code but does NOT provide its own source-code, as it should
+since the files are licensed on the terms of the GNU GPL.
+
+I've copied the files from the Zyxel source-code distribution as the basis of this host-based extractor tool:
+
+ cp userspace/public/libs/cms_util/lzw*.c .
+ cp userspace/public/include/cms_lzw.h .
+ cp userspace/public/include/linux/os_defs.h .
+ cp userspace/public/include/cms{params,version}.h .
+ cp userspace/public/include/cms.h .
+ cp shared/opensource/include/bcm963xx/bcmTag.h .
